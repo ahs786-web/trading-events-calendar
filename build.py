@@ -184,6 +184,40 @@ def compute_holidays(xnys, today: date, end: date, trading_days: set[date]) -> l
     return events
 
 
+def compute_early_closes(xnys, today: date, end: date) -> list[Event]:
+    """Half-day sessions where the NYSE closes early (typically 13:00 ET) — e.g.
+    Black Friday, Christmas Eve, the day before Independence Day. These trade on
+    thin volume and are often rangebound, so they're worth flagging."""
+    events: list[Event] = []
+
+    names: dict[date, str] = {}
+    for _time, cal in xnys.special_closes:
+        s = cal.holidays(start=today.isoformat(), end=end.isoformat(), return_name=True)
+        for ts, nm in s.items():
+            names[ts.date()] = nm
+
+    sched = xnys.schedule(start_date=today.isoformat(), end_date=end.isoformat())
+    early = xnys.early_closes(sched)
+    for ts, row in early.iterrows():
+        d = ts.date()
+        if d < today:
+            continue
+        close = row["market_close"]
+        et = close.tz_convert(TZ_NY).strftime("%H:%M")
+        lon = close.tz_convert(TZ_LONDON).strftime("%H:%M")
+        label = names.get(d, "half day")
+        if "Independence Day" in label:  # pmc's raw rule name is a mouthful
+            label = "day before Independence Day"
+        events.append(Event(
+            when=london_all_day(d), all_day=True, category="early_close",
+            impact="structural", title=f"US market half day — {label}",
+            detail=f"Early close {et} ET / {lon} London — thin, often rangebound",
+            uid=f"early_close-{d.isoformat()}@trading-events",
+        ))
+
+    return events
+
+
 def third_friday(year: int, month: int) -> date:
     first = date(year, month, 1)
     # weekday(): Mon=0 .. Sun=6; Friday=4
@@ -613,6 +647,7 @@ def main() -> int:
     horizon_last = today + timedelta(days=365 * HORIZON_YEARS)
     structural = compute_structural(today, trading_days)
     structural += compute_holidays(xnys, today, horizon_last, trading_days)
+    structural += compute_early_closes(xnys, today, horizon_last)
     print(f"[structural] {len(structural)} computed events.", file=sys.stderr)
 
     # --- Earnings (fail loudly if the source is entirely broken) ------------

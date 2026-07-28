@@ -15,7 +15,8 @@ All display times are **Europe/London**. No accounts, no server, no database.
 | Monthly & quarterly OPEX (triple witching) | computed | third Friday, moved to preceding Thursday on a US holiday |
 | VIX monthly expiry | computed | Wednesday 30 days before the *next* month's third Friday |
 | Month-end / quarter-end sessions | computed | last XNYS trading day of each month/quarter |
-| US market holidays (full closures) | computed | days the NYSE is fully closed (Independence Day, Thanksgiving, …); early-close half-days excluded |
+| US market holidays (full closures) | computed | days the NYSE is fully closed (Independence Day, Thanksgiving, …) |
+| Early-close half-days | computed | thin, often-rangebound sessions closing 13:00 ET (Black Friday, Christmas Eve, July 3rd) |
 | Macro (CPI, NFP, FOMC, PCE, …) | [ForexFactory feed](https://nfs.faireconomy.media/ff_calendar_thisweek.json) | fetched once/day, USD + high-impact + a medium allowlist |
 | Earnings (9 mega-caps) | [`earnings.yaml`](earnings.yaml) | hand-maintained; confirmed vs. estimated flagged honestly |
 

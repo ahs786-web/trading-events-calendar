@@ -23,6 +23,7 @@
     --c-vix_expiry: #35d6a5;
     --c-period_end: #7a8699;
     --c-holiday: #ff7ab6;
+    --c-early_close: #f6c453;
     --stale: #ff5757;
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -137,6 +138,7 @@ const CATS = {
   vix_expiry:     { label: "VIX expiry",      color: "var(--c-vix_expiry)" },
   period_end:     { label: "Period end",      color: "var(--c-period_end)" },
   holiday:        { label: "Market closed",   color: "var(--c-holiday)" },
+  early_close:    { label: "Half day",        color: "var(--c-early_close)" },
 };
 
 let expanded = false;
@@ -173,6 +175,7 @@ function dayLabels(key, todayKey) {
 
 function fmtTime(ev) {
   if (ev.category === "holiday") return "closed";
+  if (ev.category === "early_close") return "½ day";
   if (ev.all_day) return "all day";
   const d = new Date(ev.datetime_london);
   return d.toLocaleTimeString("en-GB", {

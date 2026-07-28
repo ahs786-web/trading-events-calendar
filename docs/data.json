@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T18:43:36.091160+01:00",
+  "generated_at": "2026-07-28T19:54:53.756870+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -274,6 +274,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2026-11-27T00:00:00+00:00",
+      "all_day": true,
+      "category": "early_close",
+      "impact": "structural",
+      "title": "US market half day — Black Friday",
+      "detail": "Early close 13:00 ET / 18:00 London — thin, often rangebound",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2026-11-30T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
@@ -298,6 +307,15 @@
       "impact": "structural",
       "title": "Quarterly OPEX / triple witching",
       "detail": "third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-12-24T00:00:00+00:00",
+      "all_day": true,
+      "category": "early_close",
+      "impact": "structural",
+      "title": "US market half day — Christmas Eve",
+      "detail": "Early close 13:00 ET / 18:00 London — thin, often rangebound",
       "confirmed": true
     },
     {
@@ -688,6 +706,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2027-11-26T00:00:00+00:00",
+      "all_day": true,
+      "category": "early_close",
+      "impact": "structural",
+      "title": "US market half day — Black Friday",
+      "detail": "Early close 13:00 ET / 18:00 London — thin, often rangebound",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2027-11-30T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
@@ -940,6 +967,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2028-07-03T00:00:00+01:00",
+      "all_day": true,
+      "category": "early_close",
+      "impact": "structural",
+      "title": "US market half day — day before Independence Day",
+      "detail": "Early close 13:00 ET / 18:00 London — thin, often rangebound",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2028-07-04T00:00:00+01:00",
       "all_day": true,
       "category": "holiday",
@@ -1090,6 +1126,15 @@
       "impact": "structural",
       "title": "US market closed — Thanksgiving",
       "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2028-11-24T00:00:00+00:00",
+      "all_day": true,
+      "category": "early_close",
+      "impact": "structural",
+      "title": "US market half day — Black Friday",
+      "detail": "Early close 13:00 ET / 18:00 London — thin, often rangebound",
       "confirmed": true
     },
     {
@@ -1351,6 +1396,15 @@
       "impact": "structural",
       "title": "Quarter-end (Q2 2029)",
       "detail": "last trading session of the quarter",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-07-03T00:00:00+01:00",
+      "all_day": true,
+      "category": "early_close",
+      "impact": "structural",
+      "title": "US market half day — day before Independence Day",
+      "detail": "Early close 13:00 ET / 18:00 London — thin, often rangebound",
       "confirmed": true
     },
     {
