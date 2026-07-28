@@ -1,0 +1,58 @@
+# Hand-maintained earnings dates. Update ~quarterly.
+#
+# HONESTY RULE (see BRIEF.md §3):
+#   confirmed: true   → you verified this against the company's Investor Relations
+#                       page or a confirmed-earnings source. Renders as a solid date.
+#   confirmed: false  → estimated window. Renders faintly / with a "~" so you know
+#                       not to trust it. Change to true once the company confirms.
+#
+# session: BMO (before market open) | AMC (after market close) | unknown
+#
+# Only AAPL below is marked confirmed (it is the example in the brief). Every other
+# row is an ESTIMATE based on the company's historical reporting pattern — verify
+# and flip `confirmed: true` as each date is announced.
+
+- ticker: AAPL
+  date: 2026-07-30
+  session: AMC
+  confirmed: true
+
+- ticker: MSFT
+  date: 2026-07-28
+  session: AMC
+  confirmed: false
+
+- ticker: GOOGL
+  date: 2026-07-28
+  session: AMC
+  confirmed: false
+
+- ticker: META
+  date: 2026-07-29
+  session: AMC
+  confirmed: false
+
+- ticker: AMZN
+  date: 2026-07-30
+  session: AMC
+  confirmed: false
+
+- ticker: NVDA
+  date: 2026-08-26
+  session: AMC
+  confirmed: false
+
+- ticker: TSLA
+  date: 2026-10-21
+  session: AMC
+  confirmed: false
+
+- ticker: HOOD
+  date: 2026-08-05
+  session: AMC
+  confirmed: false
+
+- ticker: COST
+  date: 2026-09-24
+  session: AMC
+  confirmed: false

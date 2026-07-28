@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c0f14">
+<title>Trading Events</title>
+<style>
+  :root {
+    --bg: #0c0f14;
+    --card: #151a22;
+    --card-2: #1b212b;
+    --line: #232a35;
+    --fg: #e8edf4;
+    --muted: #8b97a8;
+    --faint: #5c6675;
+    --accent: #4a9eff;
+    /* category dots */
+    --c-earnings: #ff6b6b;
+    --c-macro: #ffb648;
+    --c-opex: #4a9eff;
+    --c-opex_quarterly: #b98cff;
+    --c-vix_expiry: #35d6a5;
+    --c-period_end: #7a8699;
+    --stale: #ff5757;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 18px 16px 64px; }
+
+  header { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 4px; }
+  h1 { font-size: 19px; font-weight: 650; letter-spacing: .2px; margin: 0; }
+  .gen { font-size: 12px; color: var(--faint); white-space: nowrap; }
+
+  #banner {
+    display: none;
+    background: rgba(255,87,87,.12);
+    border: 1px solid rgba(255,87,87,.5);
+    color: #ffd4d4;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 13.5px;
+    margin: 12px 0 4px;
+    line-height: 1.4;
+  }
+  #banner.show { display: block; }
+  #banner b { color: var(--stale); }
+
+  .daygroup { margin-top: 22px; }
+  .dayhdr {
+    display: flex; align-items: baseline; gap: 8px;
+    position: sticky; top: 0;
+    background: linear-gradient(var(--bg) 78%, rgba(12,15,20,0));
+    padding: 6px 0 8px; z-index: 2;
+  }
+  .dayname { font-size: 13px; font-weight: 650; letter-spacing: .3px; text-transform: uppercase; color: var(--muted); }
+  .daydate { font-size: 13px; color: var(--faint); }
+  .today-pill {
+    font-size: 11px; font-weight: 700; color: #041018; background: var(--accent);
+    border-radius: 999px; padding: 2px 8px; letter-spacing: .4px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 8px 62px 1fr;
+    gap: 10px; align-items: start;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 11px 12px; margin-bottom: 8px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; }
+  .time { font-variant-numeric: tabular-nums; font-size: 13.5px; color: var(--muted); margin-top: 1px; white-space: nowrap; }
+  .time.allday { font-size: 11px; letter-spacing: .3px; color: var(--faint); text-transform: uppercase; }
+  .body { min-width: 0; }
+  .title { font-size: 15px; font-weight: 550; }
+  .title.est { color: var(--muted); font-style: italic; }
+  .est-tag { font-style: normal; font-size: 11px; color: var(--faint); border: 1px solid var(--line); border-radius: 5px; padding: 0 5px; margin-left: 6px; vertical-align: 1px; }
+  .detail { font-size: 12.5px; color: var(--faint); margin-top: 2px; }
+  .cat { font-size: 11px; color: var(--faint); text-transform: uppercase; letter-spacing: .4px; }
+
+  .controls { display: flex; justify-content: center; margin-top: 26px; }
+  button {
+    background: var(--card-2); color: var(--fg); border: 1px solid var(--line);
+    border-radius: 10px; padding: 10px 18px; font-size: 14px; font-weight: 550;
+    cursor: pointer;
+  }
+  button:active { background: #222a36; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 10px 14px; margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+  .legend .dot { margin: 0; }
+  .empty { color: var(--muted); text-align: center; margin-top: 40px; }
+  footer { margin-top: 30px; font-size: 11.5px; color: var(--faint); text-align: center; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Trading Events</h1>
+    <span class="gen" id="gen"></span>
+  </header>
+
+  <div id="banner"></div>
+  <div id="list"></div>
+
+  <div class="controls">
+    <button id="toggle" hidden>Show more</button>
+  </div>
+
+  <div class="legend" id="legend"></div>
+
+  <footer>
+    All times Europe/London. Deterministic dates (OPEX, VIX, period-ends) are computed
+    from the NYSE holiday calendar. Macro data from ForexFactory (USD, high-impact +
+    allowlist). Earnings marked <em>est.</em> are unconfirmed estimates.
+  </footer>
+</div>
+
+<script>
+const DEFAULT_SESSIONS = 5;      // show next N trading sessions by default
+const STALE_HOURS = 36;
+
+const CATS = {
+  earnings:       { label: "Earnings",        color: "var(--c-earnings)" },
+  macro:          { label: "Macro",           color: "var(--c-macro)" },
+  opex:           { label: "Monthly OPEX",    color: "var(--c-opex)" },
+  opex_quarterly: { label: "Quarterly OPEX",  color: "var(--c-opex_quarterly)" },
+  vix_expiry:     { label: "VIX expiry",      color: "var(--c-vix_expiry)" },
+  period_end:     { label: "Period end",      color: "var(--c-period_end)" },
+};
+
+let expanded = false;
+let sessions = [];   // [{key, date, label, isToday, events:[...]}]
+
+function fmtGen(iso) {
+  try {
+    const d = new Date(iso);
+    return "updated " + d.toLocaleString("en-GB", {
+      timeZone: "Europe/London", day: "2-digit", month: "short",
+      hour: "2-digit", minute: "2-digit"
+    });
+  } catch { return ""; }
+}
+
+function londonToday() {
+  // "today" as a YYYY-MM-DD string in Europe/London
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit"
+  }).formatToParts(new Date());
+  const o = {}; parts.forEach(p => o[p.type] = p.value);
+  return `${o.year}-${o.month}-${o.day}`;
+}
+
+function dayKey(iso) { return iso.slice(0, 10); }
+
+function dayLabels(key, todayKey) {
+  const [y, m, d] = key.split("-").map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  const name = dt.toLocaleDateString("en-GB", { timeZone: "UTC", weekday: "long" });
+  const date = dt.toLocaleDateString("en-GB", { timeZone: "UTC", day: "numeric", month: "short" });
+  return { name, date, isToday: key === todayKey };
+}
+
+function fmtTime(ev) {
+  if (ev.all_day) return "all day";
+  const d = new Date(ev.datetime_london);
+  return d.toLocaleTimeString("en-GB", {
+    timeZone: "Europe/London", hour: "2-digit", minute: "2-digit"
+  });
+}
+
+function showBanner(html) {
+  const b = document.getElementById("banner");
+  b.innerHTML = html;
+  b.classList.add("show");
+}
+
+function checkStale(data) {
+  const status = data.feed_status || "ok";
+  if (status === "denied") {
+    showBanner("<b>Data feed denied.</b> The macro source was rate-limited on the last run — "
+      + "the list below may be missing recent macro events. Deterministic dates are still correct.");
+    return;
+  }
+  let ageH = Infinity;
+  try { ageH = (Date.now() - new Date(data.generated_at).getTime()) / 3.6e6; } catch {}
+  if (status === "stale" || ageH > STALE_HOURS) {
+    const hrs = isFinite(ageH) ? Math.round(ageH) : "?";
+    showBanner(`<b>Data may be stale.</b> Last successful build was ~${hrs}h ago `
+      + `(threshold ${STALE_HOURS}h). The daily job may have failed — check the Actions tab.`);
+  }
+}
+
+function render() {
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+  const shown = expanded ? sessions : sessions.slice(0, DEFAULT_SESSIONS);
+
+  if (shown.length === 0) {
+    list.innerHTML = '<p class="empty">No upcoming events.</p>';
+    return;
+  }
+
+  for (const s of shown) {
+    const g = document.createElement("div");
+    g.className = "daygroup";
+    const hdr = document.createElement("div");
+    hdr.className = "dayhdr";
+    hdr.innerHTML = `<span class="dayname">${s.name}</span>`
+      + `<span class="daydate">${s.date}</span>`
+      + (s.isToday ? '<span class="today-pill">TODAY</span>' : "");
+    g.appendChild(hdr);
+
+    for (const ev of s.events) {
+      const cat = CATS[ev.category] || { label: ev.category, color: "var(--faint)" };
+      const est = ev.confirmed === false;
+      const row = document.createElement("div");
+      row.className = "row";
+      row.innerHTML =
+        `<div class="dot" style="background:${cat.color}"></div>`
+        + `<div class="time ${ev.all_day ? "allday" : ""}">${fmtTime(ev)}</div>`
+        + `<div class="body">`
+        +   `<div class="title ${est ? "est" : ""}">${escapeHtml(ev.title)}`
+        +     (est ? '<span class="est-tag">est.</span>' : "")
+        +   `</div>`
+        +   (ev.detail ? `<div class="detail">${escapeHtml(ev.detail)}</div>` : "")
+        +   `<div class="cat">${cat.label}</div>`
+        + `</div>`;
+      g.appendChild(row);
+    }
+    list.appendChild(g);
+  }
+
+  const btn = document.getElementById("toggle");
+  if (sessions.length > DEFAULT_SESSIONS) {
+    btn.hidden = false;
+    btn.textContent = expanded
+      ? "Show less"
+      : `Show all ${sessions.length} sessions`;
+  } else {
+    btn.hidden = true;
+  }
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => (
+    { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
+  ));
+}
+
+function buildLegend() {
+  const el = document.getElementById("legend");
+  el.innerHTML = Object.values(CATS).map(c =>
+    `<span><span class="dot" style="background:${c.color}"></span>${c.label}</span>`
+  ).join("");
+}
+
+async function load() {
+  buildLegend();
+  let data;
+  try {
+    // Cache-bust so a phone home-screen shortcut doesn't pin an old copy.
+    const res = await fetch("data.json?t=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    data = await res.json();
+  } catch (e) {
+    showBanner("<b>Could not load data.json.</b> " + escapeHtml(String(e))
+      + " — the page will be empty until the next successful build.");
+    return;
+  }
+
+  document.getElementById("gen").textContent = fmtGen(data.generated_at);
+  checkStale(data);
+
+  const todayKey = londonToday();
+  const events = (data.events || [])
+    .filter(ev => dayKey(ev.datetime_london) >= todayKey)   // hide past days
+    .sort((a, b) => a.datetime_london.localeCompare(b.datetime_london));
+
+  // Group into trading sessions (one per calendar day that has events).
+  const byDay = new Map();
+  for (const ev of events) {
+    const k = dayKey(ev.datetime_london);
+    if (!byDay.has(k)) byDay.set(k, []);
+    byDay.get(k).push(ev);
+  }
+  sessions = [...byDay.keys()].sort().map(k => ({
+    key: k, events: byDay.get(k), ...dayLabels(k, todayKey)
+  }));
+
+  render();
+}
+
+document.getElementById("toggle").addEventListener("click", () => {
+  expanded = !expanded;
+  render();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+load();
+</script>
+</body>
+</html>
