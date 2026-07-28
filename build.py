@@ -83,7 +83,7 @@ CAL_NAME = "Trading Events"
 class Event:
     when: datetime          # timezone-aware; London. For all-day, time is 00:00 London.
     all_day: bool
-    category: str           # earnings|macro|opex|opex_quarterly|vix_expiry|period_end
+    category: str           # earnings|macro|opex|opex_quarterly|vix_expiry|period_end|quarter_end|holiday|early_close
     impact: str             # high|medium|structural
     title: str
     detail: str = ""
@@ -297,14 +297,16 @@ def compute_structural(today: date, trading_days: set[date]) -> list[Event]:
     for (y, m), d in by_month.items():
         if m in quarter_months:
             q = (m - 1) // 3 + 1
+            category = "quarter_end"
             title, detail = f"Quarter-end (Q{q} {y})", "last trading session of the quarter"
         else:
+            category = "period_end"
             title = f"Month-end ({date(y, m, 1):%B} {y})"
             detail = "last trading session of the month"
         events.append(Event(
-            when=london_all_day(d), all_day=True, category="period_end",
+            when=london_all_day(d), all_day=True, category=category,
             impact="structural", title=title, detail=detail,
-            uid=f"period_end-{d.isoformat()}@trading-events",
+            uid=f"{category}-{d.isoformat()}@trading-events",
         ))
 
     return events

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T19:54:53.756870+01:00",
+  "generated_at": "2026-07-28T20:01:44.546812+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -204,7 +204,7 @@
     {
       "datetime_london": "2026-09-30T00:00:00+01:00",
       "all_day": true,
-      "category": "period_end",
+      "category": "quarter_end",
       "impact": "structural",
       "title": "Quarter-end (Q3 2026)",
       "detail": "last trading session of the quarter",
@@ -330,7 +330,7 @@
     {
       "datetime_london": "2026-12-31T00:00:00+00:00",
       "all_day": true,
-      "category": "period_end",
+      "category": "quarter_end",
       "impact": "structural",
       "title": "Quarter-end (Q4 2026)",
       "detail": "last trading session of the quarter",
@@ -447,7 +447,7 @@
     {
       "datetime_london": "2027-03-31T00:00:00+01:00",
       "all_day": true,
-      "category": "period_end",
+      "category": "quarter_end",
       "impact": "structural",
       "title": "Quarter-end (Q1 2027)",
       "detail": "last trading session of the quarter",
@@ -546,7 +546,7 @@
     {
       "datetime_london": "2027-06-30T00:00:00+01:00",
       "all_day": true,
-      "category": "period_end",
+      "category": "quarter_end",
       "impact": "structural",
       "title": "Quarter-end (Q2 2027)",
       "detail": "last trading session of the quarter",
@@ -645,7 +645,7 @@
     {
       "datetime_london": "2027-09-30T00:00:00+01:00",
       "all_day": true,
-      "category": "period_end",
+      "category": "quarter_end",
       "impact": "structural",
       "title": "Quarter-end (Q3 2027)",
       "detail": "last trading session of the quarter",
@@ -753,7 +753,7 @@
     {
       "datetime_london": "2027-12-31T00:00:00+00:00",
       "all_day": true,
-      "category": "period_end",
+      "category": "quarter_end",
       "impact": "structural",
       "title": "Quarter-end (Q4 2027)",
       "detail": "last trading session of the quarter",
@@ -852,7 +852,7 @@
     {
       "datetime_london": "2028-03-31T00:00:00+01:00",
       "all_day": true,
-      "category": "period_end",
+      "category": "quarter_end",
       "impact": "structural",
       "title": "Quarter-end (Q1 2028)",
       "detail": "last trading session of the quarter",
@@ -960,7 +960,7 @@
     {
       "datetime_london": "2028-06-30T00:00:00+01:00",
       "all_day": true,
-      "category": "period_end",
+      "category": "quarter_end",
       "impact": "structural",
       "title": "Quarter-end (Q2 2028)",
       "detail": "last trading session of the quarter",
@@ -1068,7 +1068,7 @@
     {
       "datetime_london": "2028-09-29T00:00:00+01:00",
       "all_day": true,
-      "category": "period_end",
+      "category": "quarter_end",
       "impact": "structural",
       "title": "Quarter-end (Q3 2028)",
       "detail": "last trading session of the quarter",
@@ -1176,7 +1176,7 @@
     {
       "datetime_london": "2028-12-29T00:00:00+00:00",
       "all_day": true,
-      "category": "period_end",
+      "category": "quarter_end",
       "impact": "structural",
       "title": "Quarter-end (Q4 2028)",
       "detail": "last trading session of the quarter",
@@ -1284,7 +1284,7 @@
     {
       "datetime_london": "2029-03-29T00:00:00+01:00",
       "all_day": true,
-      "category": "period_end",
+      "category": "quarter_end",
       "impact": "structural",
       "title": "Quarter-end (Q1 2029)",
       "detail": "last trading session of the quarter",
@@ -1392,7 +1392,7 @@
     {
       "datetime_london": "2029-06-29T00:00:00+01:00",
       "all_day": true,
-      "category": "period_end",
+      "category": "quarter_end",
       "impact": "structural",
       "title": "Quarter-end (Q2 2029)",
       "detail": "last trading session of the quarter",
