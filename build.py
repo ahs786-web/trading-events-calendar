@@ -115,14 +115,73 @@ def london_all_day(d: date) -> datetime:
 # ─────────────────────────────────────────────────────────────────────────────
 
 
-def get_trading_days(start: date, end: date) -> set[date]:
-    """Set of valid XNYS (NYSE) trading days in [start, end]. A weekday NOT in
-    this set is a US market holiday."""
+def get_calendar():
+    """The XNYS (NYSE) market calendar object."""
     import pandas_market_calendars as mcal
 
-    xnys = mcal.get_calendar("XNYS")
+    return mcal.get_calendar("XNYS")
+
+
+def get_trading_days(xnys, start: date, end: date) -> set[date]:
+    """Set of valid XNYS (NYSE) trading days in [start, end]. A weekday NOT in
+    this set is a full-day US market closure (early-close half days ARE trading
+    days and are not included here)."""
     sched = xnys.valid_days(start_date=start.isoformat(), end_date=end.isoformat())
     return {ts.date() for ts in sched}
+
+
+# Nicer display names for a few of the calendar's holiday labels.
+HOLIDAY_RENAME = {
+    "July 4th": "Independence Day",
+    "President's Day": "Presidents' Day",
+    "Dr. Martin Luther King Jr. Day": "Martin Luther King Jr. Day",
+}
+
+
+def compute_holidays(xnys, today: date, end: date, trading_days: set[date]) -> list[Event]:
+    """Full-day US stock-market closures (Independence Day, Thanksgiving, etc.).
+
+    Uses the XNYS calendar's named regular-holiday rules for labels, and also
+    sweeps for any weekday that is closed but unnamed (one-off adhoc closures,
+    e.g. a national day of mourning) so nothing slips through unlabelled.
+    Early-close half-days are NOT closures and are intentionally excluded.
+    """
+    events: list[Event] = []
+    named_dates: set[date] = set()
+
+    named = xnys.regular_holidays.holidays(
+        start=today.isoformat(), end=end.isoformat(), return_name=True
+    )
+    for ts, name in named.items():
+        d = ts.date()
+        # Skip past dates, weekends (market is already shut; an unobserved
+        # weekend holiday like a Saturday New Year's Day is not a closure), and
+        # anything that is somehow still a trading day.
+        if d < today or d.weekday() >= 5 or d in trading_days:
+            continue
+        named_dates.add(d)
+        nm = HOLIDAY_RENAME.get(name, name)
+        events.append(Event(
+            when=london_all_day(d), all_day=True, category="holiday",
+            impact="structural", title=f"US market closed — {nm}",
+            detail="NYSE full-day closure",
+            uid=f"holiday-{d.isoformat()}@trading-events",
+        ))
+
+    # Adhoc / unscheduled closures: a weekday that isn't a trading day and wasn't
+    # named above.
+    d = today
+    while d <= end:
+        if d.weekday() < 5 and d not in trading_days and d not in named_dates:
+            events.append(Event(
+                when=london_all_day(d), all_day=True, category="holiday",
+                impact="structural", title="US market closed — holiday",
+                detail="NYSE closure (unscheduled)",
+                uid=f"holiday-{d.isoformat()}@trading-events",
+            ))
+        d += timedelta(days=1)
+
+    return events
 
 
 def third_friday(year: int, month: int) -> date:
@@ -549,8 +608,11 @@ def main() -> int:
     # --- Deterministic dates (must always succeed) --------------------------
     cal_start = today - timedelta(days=10)
     cal_end = today + timedelta(days=365 * HORIZON_YEARS + 90)
-    trading_days = get_trading_days(cal_start, cal_end)
+    xnys = get_calendar()
+    trading_days = get_trading_days(xnys, cal_start, cal_end)
+    horizon_last = today + timedelta(days=365 * HORIZON_YEARS)
     structural = compute_structural(today, trading_days)
+    structural += compute_holidays(xnys, today, horizon_last, trading_days)
     print(f"[structural] {len(structural)} computed events.", file=sys.stderr)
 
     # --- Earnings (fail loudly if the source is entirely broken) ------------

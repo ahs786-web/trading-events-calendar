@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T18:33:59.376908+01:00",
+  "generated_at": "2026-07-28T18:43:36.091160+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -81,7 +81,7 @@
       "category": "macro",
       "impact": "high",
       "title": "Advance GDP q/q",
-      "detail": "forecast 2.0% / previous 2.0%",
+      "detail": "forecast 2.1% / previous 2.0%",
       "confirmed": true
     },
     {
@@ -163,6 +163,15 @@
       "impact": "structural",
       "title": "Month-end (August 2026)",
       "detail": "last trading session of the month",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-07T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Labor Day",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
@@ -256,6 +265,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2026-11-26T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Thanksgiving",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2026-11-30T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
@@ -283,6 +301,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2026-12-25T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Christmas",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2026-12-31T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
@@ -292,12 +319,30 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2027-01-01T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — New Year's Day",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2027-01-15T00:00:00+00:00",
       "all_day": true,
       "category": "opex",
       "impact": "structural",
       "title": "Monthly OPEX",
       "detail": "third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2027-01-18T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Martin Luther King Jr. Day",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
@@ -316,6 +361,15 @@
       "impact": "structural",
       "title": "Month-end (January 2027)",
       "detail": "last trading session of the month",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2027-02-15T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Presidents' Day",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
@@ -361,6 +415,15 @@
       "impact": "structural",
       "title": "Quarterly OPEX / triple witching",
       "detail": "third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2027-03-26T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Good Friday",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
@@ -427,6 +490,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2027-05-31T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Memorial Day",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2027-06-16T00:00:00+01:00",
       "all_day": true,
       "category": "vix_expiry",
@@ -445,12 +517,30 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2027-06-18T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Juneteenth National Independence Day",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2027-06-30T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
       "title": "Quarter-end (Q2 2027)",
       "detail": "last trading session of the quarter",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2027-07-05T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Independence Day",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
@@ -505,6 +595,15 @@
       "impact": "structural",
       "title": "Month-end (August 2027)",
       "detail": "last trading session of the month",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2027-09-06T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Labor Day",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
@@ -580,6 +679,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2027-11-25T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Thanksgiving",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2027-11-30T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
@@ -607,12 +715,30 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2027-12-24T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Christmas",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2027-12-31T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
       "title": "Quarter-end (Q4 2027)",
       "detail": "last trading session of the quarter",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2028-01-17T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Martin Luther King Jr. Day",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
@@ -661,6 +787,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2028-02-21T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Presidents' Day",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2028-02-29T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
@@ -694,6 +829,15 @@
       "impact": "structural",
       "title": "Quarter-end (Q1 2028)",
       "detail": "last trading session of the quarter",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2028-04-14T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Good Friday",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
@@ -742,6 +886,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2028-05-29T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Memorial Day",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2028-05-31T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
@@ -760,6 +913,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2028-06-19T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Juneteenth National Independence Day",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2028-06-21T00:00:00+01:00",
       "all_day": true,
       "category": "vix_expiry",
@@ -775,6 +937,15 @@
       "impact": "structural",
       "title": "Quarter-end (Q2 2028)",
       "detail": "last trading session of the quarter",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2028-07-04T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Independence Day",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
@@ -829,6 +1000,15 @@
       "impact": "structural",
       "title": "Month-end (August 2028)",
       "detail": "last trading session of the month",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2028-09-04T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Labor Day",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
@@ -904,6 +1084,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2028-11-23T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Thanksgiving",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2028-11-30T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
@@ -931,12 +1120,39 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2028-12-25T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Christmas",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2028-12-29T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
       "title": "Quarter-end (Q4 2028)",
       "detail": "last trading session of the quarter",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-01-01T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — New Year's Day",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-01-15T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Martin Luther King Jr. Day",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
@@ -985,6 +1201,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2029-02-19T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Presidents' Day",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2029-02-28T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
@@ -1018,6 +1243,15 @@
       "impact": "structural",
       "title": "Quarter-end (Q1 2029)",
       "detail": "last trading session of the quarter",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-03-30T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Good Friday",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
@@ -1066,6 +1300,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2029-05-28T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Memorial Day",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2029-05-31T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
@@ -1084,6 +1327,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2029-06-19T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Juneteenth National Independence Day",
+      "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2029-06-20T00:00:00+01:00",
       "all_day": true,
       "category": "vix_expiry",
@@ -1099,6 +1351,15 @@
       "impact": "structural",
       "title": "Quarter-end (Q2 2029)",
       "detail": "last trading session of the quarter",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-07-04T00:00:00+01:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Independence Day",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
