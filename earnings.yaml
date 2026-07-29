@@ -1,16 +1,20 @@
 # Hand-maintained earnings dates. Update ~quarterly.
 #
 # HONESTY RULE (see BRIEF.md §3):
-#   confirmed: true   → you verified this against the company's Investor Relations
-#                       page or a confirmed-earnings source. Renders as a solid date.
+#   confirmed: true   → verified against a confirmed-earnings source (company IR
+#                       page or Nasdaq's earnings calendar). Renders as a solid date.
 #   confirmed: false  → estimated window. Renders faintly / with a "~" so you know
 #                       not to trust it. Change to true once the company confirms.
 #
 # session: BMO (before market open) | AMC (after market close) | unknown
 #
-# Only AAPL below is marked confirmed (it is the example in the brief). Every other
-# row is an ESTIMATE based on the company's historical reporting pattern — verify
-# and flip `confirmed: true` as each date is announced.
+# Last cross-checked against Nasdaq's earnings calendar on 2026-07-29.
+#   - Imminent Q2-2026 dates below are verified (confirmed: true).
+#   - GOOGL and TSLA already reported on 2026-07-22; the dates below are ESTIMATES
+#     for their next (Q3) report and are not yet on any calendar — verify later.
+#   - NVDA 2026-08-26 is what Nasdaq lists but is still ~4 weeks out, so it is left
+#     as unconfirmed until Nvidia formally announces.
+#   - COST is not yet scheduled on Nasdaq; the date is a historical-pattern estimate.
 
 - ticker: AAPL
   date: 2026-07-30
@@ -18,41 +22,41 @@
   confirmed: true
 
 - ticker: MSFT
-  date: 2026-07-28
+  date: 2026-07-29
   session: AMC
-  confirmed: false
-
-- ticker: GOOGL
-  date: 2026-07-28
-  session: AMC
-  confirmed: false
+  confirmed: true
 
 - ticker: META
   date: 2026-07-29
   session: AMC
-  confirmed: false
+  confirmed: true
 
 - ticker: AMZN
   date: 2026-07-30
   session: AMC
-  confirmed: false
+  confirmed: true
+
+- ticker: HOOD
+  date: 2026-07-29
+  session: AMC
+  confirmed: true
 
 - ticker: NVDA
   date: 2026-08-26
   session: AMC
-  confirmed: false
+  confirmed: false   # Nasdaq lists this, but ~4wk out — treat as estimate until NVDA confirms
+
+- ticker: GOOGL
+  date: 2026-10-27
+  session: AMC
+  confirmed: false   # last reported 2026-07-22; next-quarter date is an estimate
 
 - ticker: TSLA
   date: 2026-10-21
   session: AMC
-  confirmed: false
-
-- ticker: HOOD
-  date: 2026-08-05
-  session: AMC
-  confirmed: false
+  confirmed: false   # last reported 2026-07-22; next-quarter date is an estimate
 
 - ticker: COST
   date: 2026-09-24
   session: AMC
-  confirmed: false
+  confirmed: false   # not yet on Nasdaq calendar; historical-pattern estimate
