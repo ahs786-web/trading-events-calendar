@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T21:45:55.621502+01:00",
+  "generated_at": "2026-07-29T22:02:37.506235+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -144,7 +144,7 @@
       "category": "earnings",
       "impact": "high",
       "title": "NVDA earnings (AMC)",
-      "detail": "estimated — verify against IR · source: earnings.yaml",
+      "detail": "estimated — verify against IR · source: nasdaq calendar (estimate)",
       "confirmed": false
     },
     {

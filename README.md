@@ -19,7 +19,7 @@ All display times are **Europe/London**. No accounts, no server, no database.
 | US market holidays (full closures) | computed | days the NYSE is fully closed (Independence Day, Thanksgiving, …) |
 | Early-close half-days | computed | thin, often-rangebound sessions closing 13:00 ET (Black Friday, Christmas Eve, July 3rd) |
 | Macro (CPI, NFP, FOMC, PCE, …) | [ForexFactory feed](https://nfs.faireconomy.media/ff_calendar_thisweek.json) | fetched once/day, USD + high-impact + a medium allowlist |
-| Earnings (9 mega-caps) | [`earnings.yaml`](earnings.yaml) | hand-maintained; confirmed vs. estimated flagged honestly |
+| Earnings (9 mega-caps) | [`earnings.yaml`](earnings.yaml) + Nasdaq calendar | YAML is authoritative; Nasdaq refreshes *unconfirmed* dates only |
 
 Deterministic dates are **computed from a real NYSE holiday calendar**
 (`pandas_market_calendars`, XNYS) — never fetched, never hardcoded.
@@ -47,6 +47,13 @@ docs/events.ics            # written by build.py
   or `generated_at` is over 36 h old. Silent staleness is the main risk.
 - Earnings dates marked `confirmed: false` render faintly with an `est.` tag, in
   both the page and the `.ics` (prefixed `≈`).
+- **Earnings sourcing:** `earnings.yaml` is the source of truth. Each run also
+  does a best-effort scan of Nasdaq's public earnings calendar (~45 days ahead)
+  to refresh the *unconfirmed* estimates. A `confirmed: true` YAML date is
+  sacrosanct — never fetched, never overwritten. Nasdaq-derived dates stay
+  flagged as estimates (you still verify before flipping to `confirmed: true`).
+  The scan is fully defensive: if Nasdaq is blocked (common from CI IPs) or
+  unreachable, it bails out quietly and the run still succeeds on YAML alone.
 
 ## Local run
 

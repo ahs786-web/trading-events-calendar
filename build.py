@@ -45,6 +45,17 @@ EARNINGS_TIME_ET = {
     # "unknown" → rendered as an all-day event
 }
 ENABLE_EARNINGS_API = True  # best-effort API fill; failure is non-fatal (YAML is truth)
+# Nasdaq's public earnings calendar is queried per-date. We scan forward from
+# today to find each ticker's next report. Confirmed YAML dates are never
+# overridden and are skipped entirely (no request made for them).
+EARNINGS_API_SCAN_DAYS = 45          # how far ahead to look; firms publish ~3-6wk out
+EARNINGS_API_BLOCK_STREAK = 3        # consecutive bad responses ⇒ assume blocked, stop
+EARNINGS_API_MAX_SECONDS = 60        # hard wall-clock budget for the whole scan
+NASDAQ_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
+)
+NASDAQ_TIME_MAP = {"time-pre-market": "BMO", "time-after-hours": "AMC"}
 
 # --- Macro (ForexFactory / faireconomy) -------------------------------------
 MACRO_FEEDS = [
@@ -466,48 +477,86 @@ def load_earnings_yaml() -> list[dict]:
     return data
 
 
-def fetch_earnings_api() -> dict[str, dict]:
-    """Best-effort free API for confirmed earnings dates. Returns {TICKER: {...}}.
-    Any failure returns {} — YAML remains the source of truth. Never raises."""
-    if not ENABLE_EARNINGS_API:
+def fetch_earnings_api(today: date, wanted: set[str]) -> dict[str, dict]:
+    """Best-effort lookup of the next earnings date for each ticker in `wanted`,
+    using Nasdaq's public per-date earnings calendar.
+
+    Scans forward from today and records the earliest upcoming report for each
+    wanted ticker. Returns {TICKER: {"date": date, "session": "BMO|AMC|unknown"}}.
+
+    Defensive by design: never raises. If `wanted` is empty, or the endpoint is
+    blocked (common from cloud/CI IPs — it answers with an HTML error page), it
+    returns whatever it found so far (possibly {}) and YAML stays authoritative.
+    """
+    if not ENABLE_EARNINGS_API or not wanted:
         return {}
-    out: dict[str, dict] = {}
+
+    import time
+
     try:
         import requests
+    except Exception as e:  # requests missing ⇒ silently fall back to YAML
+        print(f"[earnings] API unavailable ({e}); using YAML only", file=sys.stderr)
+        return {}
 
-        headers = {
-            "User-Agent": "Mozilla/5.0 (trading-events-calendar; earnings lookup)",
-            "Accept": "application/json",
-        }
-        for ticker in TICKERS:
-            try:
-                url = (
-                    "https://api.nasdaq.com/api/analyst/"
-                    f"{ticker}/earnings-date"
-                )
-                r = requests.get(url, headers=headers, timeout=15)
-                if r.status_code != 200:
-                    continue
-                body = r.text.lstrip()
-                if not body.startswith("{"):
-                    continue
-                # Nasdaq's shape varies; we only trust it as an *estimate* here.
-                # Parsing is intentionally conservative and non-fatal.
-            except Exception:
+    out: dict[str, dict] = {}
+    remaining = set(wanted)
+    bad_streak = 0
+    deadline = time.monotonic() + EARNINGS_API_MAX_SECONDS
+
+    session = requests.Session()  # keep-alive: one TLS handshake, not one per day
+    session.headers.update({"User-Agent": NASDAQ_UA, "Accept": "application/json"})
+
+    for i in range(EARNINGS_API_SCAN_DAYS):
+        if not remaining or time.monotonic() > deadline:
+            break
+        day = today + timedelta(days=i)
+        if day.weekday() >= 5:  # skip weekends — market is closed
+            continue
+        url = f"https://api.nasdaq.com/api/calendar/earnings?date={day.isoformat()}"
+        try:
+            r = session.get(url, timeout=8)
+            body = r.text.lstrip()
+            if r.status_code != 200 or not body.startswith("{"):
+                bad_streak += 1
+                if bad_streak >= EARNINGS_API_BLOCK_STREAK:
+                    print("[earnings] Nasdaq calendar looks blocked/unavailable; "
+                          "abandoning API scan (YAML remains authoritative)",
+                          file=sys.stderr)
+                    break
                 continue
-    except Exception as e:
-        print(f"[earnings] API disabled/failed: {e}", file=sys.stderr)
+            bad_streak = 0
+            data = r.json().get("data") or {}
+            rows = data.get("rows") or []
+            for row in rows:
+                sym = str(row.get("symbol", "")).upper()
+                if sym in remaining:
+                    session = NASDAQ_TIME_MAP.get(row.get("time", ""), "unknown")
+                    out[sym] = {"date": day, "session": session}
+                    remaining.discard(sym)
+        except Exception:
+            bad_streak += 1
+            if bad_streak >= EARNINGS_API_BLOCK_STREAK:
+                print("[earnings] Nasdaq calendar unreachable; abandoning API scan",
+                      file=sys.stderr)
+                break
+        time.sleep(0.2)  # be polite to the endpoint
+
+    if out:
+        print(f"[earnings] Nasdaq calendar filled {len(out)} estimate(s): "
+              + ", ".join(sorted(out)), file=sys.stderr)
     return out
 
 
-def build_earnings() -> list[Event]:
-    """YAML is the confirmed source. The API (if any) only fills gaps as estimates."""
+def build_earnings(today: date) -> list[Event]:
+    """YAML is the source of truth. A `confirmed: true` date is sacrosanct and is
+    never touched by the API. For unconfirmed (estimated) or missing tickers, the
+    Nasdaq calendar refreshes the date — but the result stays flagged as an
+    estimate, so the human still verifies before flipping `confirmed: true`."""
     yaml_rows = load_earnings_yaml()
-    api = fetch_earnings_api()
 
-    events: list[Event] = []
-    have: set[tuple[str, str]] = set()
-
+    parsed: list[dict] = []
+    confirmed_tickers: set[str] = set()
     for row in yaml_rows:
         try:
             ticker = str(row["ticker"]).upper()
@@ -519,24 +568,43 @@ def build_earnings() -> list[Event]:
         except (KeyError, ValueError, TypeError) as e:
             print(f"[earnings] skipping malformed YAML row {row!r}: {e}", file=sys.stderr)
             continue
-        events.append(_earnings_event(ticker, d, session, confirmed, "earnings.yaml"))
-        have.add((ticker, d.isoformat()))
+        parsed.append({"ticker": ticker, "date": d, "session": session,
+                       "confirmed": confirmed})
+        if confirmed:
+            confirmed_tickers.add(ticker)
 
-    # API fills only tickers/dates not already present, always as unconfirmed.
+    # Only look up tickers we don't already have a confirmed date for.
+    yaml_tickers = {p["ticker"] for p in parsed}
+    wanted = (set(TICKERS) | yaml_tickers) - confirmed_tickers
+    api = fetch_earnings_api(today, wanted)
+
+    events: list[Event] = []
+    seen: set[str] = set()
+    for p in parsed:
+        ticker, d, session, confirmed = (
+            p["ticker"], p["date"], p["session"], p["confirmed"])
+        seen.add(ticker)
+        if not confirmed and ticker in api:
+            nd, ns = api[ticker]["date"], api[ticker]["session"]
+            if nd != d or ns != session:
+                print(f"[earnings] {ticker}: refreshed estimate "
+                      f"{d} {session} → {nd} {ns} (Nasdaq)", file=sys.stderr)
+            events.append(_earnings_event(ticker, nd, ns, False,
+                                          "nasdaq calendar (estimate)"))
+        else:
+            events.append(_earnings_event(ticker, d, session, confirmed, "earnings.yaml"))
+
+    # Tickers absent from YAML entirely but found on the calendar.
     for ticker, info in api.items():
-        d = info.get("date")
-        if not d:
+        if ticker in seen:
             continue
-        key = (ticker.upper(), d.isoformat() if isinstance(d, date) else str(d))
-        if key in have:
-            continue
-        dd = d if isinstance(d, date) else date.fromisoformat(str(d))
-        events.append(_earnings_event(ticker.upper(), dd, info.get("session", "unknown"),
-                                      False, "api (estimated)"))
+        events.append(_earnings_event(ticker, info["date"],
+                                      info.get("session", "unknown"), False,
+                                      "nasdaq calendar (estimate)"))
 
     if not events:
         raise RuntimeError(
-            "no earnings data from API or earnings.yaml — the earnings source is broken"
+            "no earnings data from Nasdaq or earnings.yaml — the earnings source is broken"
         )
     return events
 
@@ -653,7 +721,7 @@ def main() -> int:
     print(f"[structural] {len(structural)} computed events.", file=sys.stderr)
 
     # --- Earnings (fail loudly if the source is entirely broken) ------------
-    earnings = build_earnings()
+    earnings = build_earnings(today)
     print(f"[earnings] {len(earnings)} events.", file=sys.stderr)
 
     # --- Macro (defensive; a denied fetch preserves the previous data.json) --
