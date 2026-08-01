@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T08:48:58.225474+01:00",
+  "generated_at": "2026-08-01T08:25:56.032793+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -109,15 +109,6 @@
       "impact": "high",
       "title": "AMZN earnings (AMC)",
       "detail": "confirmed · source: earnings.yaml",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-07-31T00:00:00+01:00",
-      "all_day": true,
-      "category": "period_end",
-      "impact": "structural",
-      "title": "Month-end (July 2026)",
-      "detail": "last trading session of the month",
       "confirmed": true
     },
     {
@@ -1435,7 +1426,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-07-30T00:00:00+01:00",
+      "datetime_london": "2029-07-31T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
@@ -1476,6 +1467,24 @@
       "category": "opex_quarterly",
       "impact": "structural",
       "title": "Quarterly OPEX / triple witching",
+      "detail": "third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-10-17T00:00:00+01:00",
+      "all_day": true,
+      "category": "vix_expiry",
+      "impact": "structural",
+      "title": "VIX monthly expiry",
+      "detail": "30 days before next month's third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-10-19T00:00:00+01:00",
+      "all_day": true,
+      "category": "opex",
+      "impact": "structural",
+      "title": "Monthly OPEX",
       "detail": "third Friday",
       "confirmed": true
     }
