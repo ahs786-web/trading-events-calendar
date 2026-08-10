@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T06:44:46.901229+01:00",
+  "generated_at": "2026-08-10T07:09:29.914792+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -1444,7 +1444,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-08-08T00:00:00+01:00",
+      "datetime_london": "2029-08-09T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
