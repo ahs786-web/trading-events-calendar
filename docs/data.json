@@ -1,51 +1,15 @@
 {
-  "generated_at": "2026-08-11T12:50:45.689175+01:00",
+  "generated_at": "2026-08-11T12:51:59.553248+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
     {
-      "datetime_london": "2026-07-29T21:30:00+01:00",
+      "datetime_london": "2026-08-11T18:00:00+01:00",
       "all_day": false,
-      "category": "earnings",
-      "impact": "high",
-      "title": "HOOD earnings (AMC)",
-      "detail": "confirmed · source: earnings.yaml",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-07-29T21:30:00+01:00",
-      "all_day": false,
-      "category": "earnings",
-      "impact": "high",
-      "title": "META earnings (AMC)",
-      "detail": "confirmed · source: earnings.yaml",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-07-29T21:30:00+01:00",
-      "all_day": false,
-      "category": "earnings",
-      "impact": "high",
-      "title": "MSFT earnings (AMC)",
-      "detail": "confirmed · source: earnings.yaml",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-07-30T21:30:00+01:00",
-      "all_day": false,
-      "category": "earnings",
-      "impact": "high",
-      "title": "AAPL earnings (AMC)",
-      "detail": "confirmed · source: earnings.yaml",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-07-30T21:30:00+01:00",
-      "all_day": false,
-      "category": "earnings",
-      "impact": "high",
-      "title": "AMZN earnings (AMC)",
-      "detail": "confirmed · source: earnings.yaml",
+      "category": "auction",
+      "impact": "medium",
+      "title": "3-Year Treasury note auction",
+      "detail": "bidding closes 13:00 ET; results moments later",
       "confirmed": true
     },
     {
@@ -85,6 +49,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2026-08-12T18:00:00+01:00",
+      "all_day": false,
+      "category": "auction",
+      "impact": "medium",
+      "title": "10-Year Treasury note auction",
+      "detail": "bidding closes 13:00 ET; results moments later",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2026-08-13T13:30:00+01:00",
       "all_day": false,
       "category": "macro",
@@ -100,6 +73,15 @@
       "impact": "high",
       "title": "PPI m/m",
       "detail": "forecast 0.2% / previous -0.3%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-08-13T18:00:00+01:00",
+      "all_day": false,
+      "category": "auction",
+      "impact": "medium",
+      "title": "30-Year Treasury bond auction",
+      "detail": "bidding closes 13:00 ET; results moments later",
       "confirmed": true
     },
     {
@@ -139,6 +121,24 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2026-08-26T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Core PCE (July)",
+      "detail": "Personal Income & Outlays · Fed's preferred inflation gauge",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-08-26T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "GDP second estimate (Q2)",
+      "detail": "official BEA schedule",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2026-08-26T21:30:00+01:00",
       "all_day": false,
       "category": "earnings",
@@ -157,12 +157,39 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2026-09-04T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Jobs report (NFP)",
+      "detail": "August 2026 data · official BLS schedule",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2026-09-07T00:00:00+01:00",
       "all_day": true,
       "category": "holiday",
       "impact": "structural",
       "title": "US market closed — Labor Day",
       "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-10T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "PPI release",
+      "detail": "August 2026 data · official BLS schedule",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-11T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "CPI release",
+      "detail": "August 2026 data · official BLS schedule",
       "confirmed": true
     },
     {
@@ -175,6 +202,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2026-09-16T19:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC rate decision",
+      "detail": "Statement 14:00 ET, press conference 14:30 ET · SEP/dot plot",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2026-09-18T00:00:00+01:00",
       "all_day": true,
       "category": "opex_quarterly",
@@ -182,15 +218,6 @@
       "title": "Quarterly OPEX / triple witching",
       "detail": "third Friday",
       "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-24T21:30:00+01:00",
-      "all_day": false,
-      "category": "earnings",
-      "impact": "high",
-      "title": "COST earnings (AMC)",
-      "detail": "estimated — verify against IR · source: earnings.yaml",
-      "confirmed": false
     },
     {
       "datetime_london": "2026-09-30T00:00:00+01:00",
@@ -202,6 +229,51 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2026-09-30T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Core PCE (August)",
+      "detail": "Personal Income & Outlays · Fed's preferred inflation gauge",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-30T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "GDP third estimate (Q2)",
+      "detail": "official BEA schedule",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-10-02T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Jobs report (NFP)",
+      "detail": "September 2026 data · official BLS schedule",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-10-14T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "CPI release",
+      "detail": "September 2026 data · official BLS schedule",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-10-15T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "PPI release",
+      "detail": "September 2026 data · official BLS schedule",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2026-10-16T00:00:00+01:00",
       "all_day": true,
       "category": "opex",
@@ -209,6 +281,15 @@
       "title": "Monthly OPEX",
       "detail": "third Friday",
       "confirmed": true
+    },
+    {
+      "datetime_london": "2026-10-20T21:30:00+01:00",
+      "all_day": false,
+      "category": "earnings",
+      "impact": "high",
+      "title": "NFLX earnings (AMC)",
+      "detail": "estimated — verify against IR · source: earnings.yaml",
+      "confirmed": false
     },
     {
       "datetime_london": "2026-10-21T00:00:00+01:00",
@@ -238,12 +319,120 @@
       "confirmed": false
     },
     {
+      "datetime_london": "2026-10-27T20:30:00+00:00",
+      "all_day": false,
+      "category": "earnings",
+      "impact": "high",
+      "title": "MSFT earnings (AMC)",
+      "detail": "estimated — verify against IR · source: earnings.yaml",
+      "confirmed": false
+    },
+    {
+      "datetime_london": "2026-10-28T18:00:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC rate decision",
+      "detail": "Statement 14:00 ET, press conference 14:30 ET",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-10-28T20:30:00+00:00",
+      "all_day": false,
+      "category": "earnings",
+      "impact": "high",
+      "title": "META earnings (AMC)",
+      "detail": "estimated — verify against IR · source: earnings.yaml",
+      "confirmed": false
+    },
+    {
+      "datetime_london": "2026-10-29T12:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Core PCE (September)",
+      "detail": "Personal Income & Outlays · Fed's preferred inflation gauge",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-10-29T12:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "GDP advance estimate (Q3)",
+      "detail": "official BEA schedule · biggest GDP print",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-10-29T20:30:00+00:00",
+      "all_day": false,
+      "category": "earnings",
+      "impact": "high",
+      "title": "AAPL earnings (AMC)",
+      "detail": "estimated — verify against IR · source: earnings.yaml",
+      "confirmed": false
+    },
+    {
+      "datetime_london": "2026-10-29T20:30:00+00:00",
+      "all_day": false,
+      "category": "earnings",
+      "impact": "high",
+      "title": "AMZN earnings (AMC)",
+      "detail": "estimated — verify against IR · source: earnings.yaml",
+      "confirmed": false
+    },
+    {
       "datetime_london": "2026-10-30T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
       "title": "Month-end (October 2026)",
       "detail": "last trading session of the month",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-03T21:30:00+00:00",
+      "all_day": false,
+      "category": "earnings",
+      "impact": "high",
+      "title": "AMD earnings (AMC)",
+      "detail": "estimated — verify against IR · source: earnings.yaml",
+      "confirmed": false
+    },
+    {
+      "datetime_london": "2026-11-05T21:30:00+00:00",
+      "all_day": false,
+      "category": "earnings",
+      "impact": "high",
+      "title": "COIN earnings (AMC)",
+      "detail": "estimated — verify against IR · source: earnings.yaml",
+      "confirmed": false
+    },
+    {
+      "datetime_london": "2026-11-06T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Jobs report (NFP)",
+      "detail": "October 2026 data · official BLS schedule",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-10T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "CPI release",
+      "detail": "October 2026 data · official BLS schedule",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-13T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "PPI release",
+      "detail": "October 2026 data · official BLS schedule",
       "confirmed": true
     },
     {
@@ -262,6 +451,24 @@
       "impact": "structural",
       "title": "Monthly OPEX",
       "detail": "third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-25T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Core PCE (October)",
+      "detail": "Personal Income & Outlays · Fed's preferred inflation gauge",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-25T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "GDP second estimate (Q3)",
+      "detail": "official BEA schedule",
       "confirmed": true
     },
     {
@@ -292,6 +499,42 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2026-12-04T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Jobs report (NFP)",
+      "detail": "November 2026 data · official BLS schedule",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-12-09T19:00:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC rate decision",
+      "detail": "Statement 14:00 ET, press conference 14:30 ET · SEP/dot plot",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-12-10T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "CPI release",
+      "detail": "November 2026 data · official BLS schedule",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-12-15T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "PPI release",
+      "detail": "November 2026 data · official BLS schedule",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2026-12-16T00:00:00+00:00",
       "all_day": true,
       "category": "vix_expiry",
@@ -307,6 +550,24 @@
       "impact": "structural",
       "title": "Quarterly OPEX / triple witching",
       "detail": "third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-12-23T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Core PCE (November)",
+      "detail": "Personal Income & Outlays · Fed's preferred inflation gauge",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-12-23T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "GDP third estimate (Q3)",
+      "detail": "official BEA schedule",
       "confirmed": true
     },
     {
@@ -373,6 +634,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2027-01-27T19:00:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC rate decision",
+      "detail": "Statement 14:00 ET, press conference 14:30 ET",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2027-01-29T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
@@ -427,6 +697,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2027-03-17T18:00:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC rate decision",
+      "detail": "Statement 14:00 ET, press conference 14:30 ET · SEP/dot plot",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2027-03-19T00:00:00+00:00",
       "all_day": true,
       "category": "opex_quarterly",
@@ -472,6 +751,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2027-04-28T19:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC rate decision",
+      "detail": "Statement 14:00 ET, press conference 14:30 ET",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2027-04-30T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
@@ -514,6 +802,15 @@
       "impact": "structural",
       "title": "US market closed — Memorial Day",
       "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2027-06-09T19:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC rate decision",
+      "detail": "Statement 14:00 ET, press conference 14:30 ET · SEP/dot plot",
       "confirmed": true
     },
     {
@@ -580,6 +877,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2027-07-28T19:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC rate decision",
+      "detail": "Statement 14:00 ET, press conference 14:30 ET",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2027-07-30T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
@@ -634,6 +940,15 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2027-09-15T19:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC rate decision",
+      "detail": "Statement 14:00 ET, press conference 14:30 ET · SEP/dot plot",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2027-09-17T00:00:00+01:00",
       "all_day": true,
       "category": "opex_quarterly",
@@ -667,6 +982,15 @@
       "impact": "structural",
       "title": "VIX monthly expiry",
       "detail": "30 days before next month's third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2027-10-27T19:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC rate decision",
+      "detail": "Statement 14:00 ET, press conference 14:30 ET",
       "confirmed": true
     },
     {
@@ -721,6 +1045,15 @@
       "impact": "structural",
       "title": "Month-end (November 2027)",
       "detail": "last trading session of the month",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2027-12-08T19:00:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC rate decision",
+      "detail": "Statement 14:00 ET, press conference 14:30 ET · SEP/dot plot",
       "confirmed": true
     },
     {
