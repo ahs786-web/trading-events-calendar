@@ -1,62 +1,69 @@
 # Hand-maintained earnings dates. Update ~quarterly.
 #
 # HONESTY RULE (see BRIEF.md §3):
-#   confirmed: true   → verified against a confirmed-earnings source (company IR
-#                       page or Nasdaq's earnings calendar). Renders as a solid date.
+#   confirmed: true   → verified against the company's Investor Relations page or
+#                       a confirmed-earnings source. Renders as a solid date.
 #   confirmed: false  → estimated window. Renders faintly / with a "~" so you know
 #                       not to trust it. Change to true once the company confirms.
 #
 # session: BMO (before market open) | AMC (after market close) | unknown
 #
-# Last cross-checked against Nasdaq's earnings calendar on 2026-07-29.
-#   - Imminent Q2-2026 dates below are verified (confirmed: true).
-#   - GOOGL and TSLA already reported on 2026-07-22; the dates below are ESTIMATES
-#     for their next (Q3) report and are not yet on any calendar — verify later.
-#   - NVDA 2026-08-26 is what Nasdaq lists but is still ~4 weeks out, so it is left
-#     as unconfirmed until Nvidia formally announces.
-#   - COST is not yet scheduled on Nasdaq; the date is a historical-pattern estimate.
-
-- ticker: AAPL
-  date: 2026-07-30
-  session: AMC
-  confirmed: true
-
-- ticker: MSFT
-  date: 2026-07-29
-  session: AMC
-  confirmed: true
-
-- ticker: META
-  date: 2026-07-29
-  session: AMC
-  confirmed: true
-
-- ticker: AMZN
-  date: 2026-07-30
-  session: AMC
-  confirmed: true
-
-- ticker: HOOD
-  date: 2026-07-29
-  session: AMC
-  confirmed: true
+# The daily build also scans Nasdaq's earnings calendar and refreshes any
+# UNCONFIRMED row below automatically (still flagged as an estimate).
+# A confirmed: true row is never touched.
+#
+# Tickers refreshed 2026-08-11 to Ali's watchlist (Mag 7 + AMD, NFLX, COIN).
+# All rows below are next-quarter ESTIMATES from historical reporting patterns —
+# the July/August 2026 reports have already passed. NVDA is the only one Nasdaq
+# currently lists (2026-08-26); the rest get corrected by the daily scan as
+# they're scheduled.
 
 - ticker: NVDA
   date: 2026-08-26
   session: AMC
-  confirmed: false   # Nasdaq lists this, but ~4wk out — treat as estimate until NVDA confirms
+  confirmed: false   # on Nasdaq's calendar but ~2wk out; flip true when NVDA IR confirms
 
-- ticker: GOOGL
-  date: 2026-10-27
+- ticker: NFLX
+  date: 2026-10-20
   session: AMC
-  confirmed: false   # last reported 2026-07-22; next-quarter date is an estimate
+  confirmed: false
 
 - ticker: TSLA
   date: 2026-10-21
   session: AMC
-  confirmed: false   # last reported 2026-07-22; next-quarter date is an estimate
+  confirmed: false
 
-- ticker: COST
-  date: 2026-09-24
+- ticker: GOOGL
+  date: 2026-10-27
   session: AMC
-  confirmed: false   # not yet on Nasdaq calendar; historical-pattern estimate
+  confirmed: false
+
+- ticker: MSFT
+  date: 2026-10-27
+  session: AMC
+  confirmed: false
+
+- ticker: META
+  date: 2026-10-28
+  session: AMC
+  confirmed: false
+
+- ticker: AAPL
+  date: 2026-10-29
+  session: AMC
+  confirmed: false
+
+- ticker: AMZN
+  date: 2026-10-29
+  session: AMC
+  confirmed: false
+
+- ticker: AMD
+  date: 2026-11-03
+  session: AMC
+  confirmed: false
+
+- ticker: COIN
+  date: 2026-11-05
+  session: AMC
+  confirmed: false

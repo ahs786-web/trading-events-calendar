@@ -18,8 +18,10 @@ All display times are **Europe/London**. No accounts, no server, no database.
 | Month-end sessions | computed | last XNYS trading day of each month |
 | US market holidays (full closures) | computed | days the NYSE is fully closed (Independence Day, Thanksgiving, …) |
 | Early-close half-days | computed | thin, often-rangebound sessions closing 13:00 ET (Black Friday, Christmas Eve, July 3rd) |
-| Macro (CPI, NFP, FOMC, PCE, …) | [ForexFactory feed](https://nfs.faireconomy.media/ff_calendar_thisweek.json) | fetched once/day, USD + high-impact + a medium allowlist |
-| Earnings (9 mega-caps) | [`earnings.yaml`](earnings.yaml) + Nasdaq calendar | YAML is authoritative; Nasdaq refreshes *unconfirmed* dates only |
+| Macro, current week (with forecasts) | [ForexFactory feed](https://nfs.faireconomy.media/ff_calendar_thisweek.json) | fetched once/day, USD + high-impact + a medium allowlist |
+| Macro, months ahead (FOMC, CPI, NFP, PPI, GDP, PCE) | [`macro_schedule.yaml`](macro_schedule.yaml) | official Fed/BLS/BEA release schedules, hand-refreshed yearly; deduped against the FF feed |
+| Treasury auctions (3y / 10y / 30y) | [TreasuryDirect API](https://www.treasurydirect.gov/TA_WS/securities/upcoming?format=json) | free official JSON, no key; 13:00 ET close; best-effort |
+| Earnings (Mag 7 + AMD, NFLX, COIN) | [`earnings.yaml`](earnings.yaml) + Nasdaq calendar | YAML is authoritative; Nasdaq refreshes *unconfirmed* dates only |
 
 Deterministic dates are **computed from a real NYSE holiday calendar**
 (`pandas_market_calendars`, XNYS) — never fetched, never hardcoded.
@@ -29,6 +31,7 @@ Deterministic dates are **computed from a real NYSE holiday calendar**
 ```
 build.py                   # the daily job
 earnings.yaml              # hand-maintained earnings dates (~quarterly edit)
+macro_schedule.yaml        # official FOMC/CPI/NFP/PPI/GDP/PCE dates (~yearly edit)
 requirements.txt
 docs/index.html            # the page (GitHub Pages serves /docs)
 docs/data.json             # written by build.py
@@ -54,6 +57,15 @@ docs/events.ics            # written by build.py
   flagged as estimates (you still verify before flipping to `confirmed: true`).
   The scan is fully defensive: if Nasdaq is blocked (common from CI IPs) or
   unreachable, it bails out quietly and the run still succeeds on YAML alone.
+- **Scheduled macro needs a yearly refresh:** `macro_schedule.yaml` carries the
+  official Fed/BLS/BEA dates (FOMC currently through Dec 2027, BLS/BEA through
+  Dec 2026). When under ~45 days of runway remain, the build logs a loud
+  warning. Refresh from the URLs in the file's header — BLS also publishes an
+  auto-updating ICS (`bls.gov/schedule/news_release/bls.ics`) that makes the
+  copy-paste quick.
+- **Treasury auctions are best-effort:** a TreasuryDirect outage skips auctions
+  for that run without failing the build (they're secondary context, not the
+  thing that gets you caught out).
 
 ## Local run
 

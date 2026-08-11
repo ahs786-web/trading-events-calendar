@@ -37,7 +37,7 @@ TZ_NY = ZoneInfo("America/New_York")  # US market local time (handles DST)
 HORIZON_YEARS = 3  # generate deterministic dates from today to +3 years
 
 # --- Earnings ---------------------------------------------------------------
-TICKERS = ["AAPL", "NVDA", "MSFT", "AMZN", "META", "GOOGL", "TSLA", "HOOD", "COST"]
+TICKERS = ["AAPL", "NVDA", "AMD", "NFLX", "AMZN", "META", "TSLA", "MSFT", "GOOGL", "COIN"]
 # Release times expressed in US Eastern (America/New_York), converted to London.
 EARNINGS_TIME_ET = {
     "BMO": (7, 0),    # before market open  → 07:00 ET
@@ -76,12 +76,23 @@ MACRO_MEDIUM_ALLOWLIST = [
     "Michigan Sentiment",
 ]
 
+# --- Treasury auctions (TreasuryDirect) --------------------------------------
+ENABLE_TREASURY = True
+TREASURY_URL = "https://www.treasurydirect.gov/TA_WS/securities/upcoming?format=json"
+# Coupon auctions worth watching intraday; bills are noise. One edit to widen.
+TREASURY_TERMS = {"3-Year", "10-Year", "30-Year"}
+TREASURY_TYPES = {"Note", "Bond"}   # excludes Bill / TIPS / FRN / CMB
+TREASURY_TIME_ET = (13, 0)          # standard 13:00 ET close for notes/bonds
+
 # --- Output paths -----------------------------------------------------------
 ROOT = Path(__file__).resolve().parent
 DOCS = ROOT / "docs"
 DATA_JSON = DOCS / "data.json"
 EVENTS_ICS = DOCS / "events.ics"
 EARNINGS_YAML = ROOT / "earnings.yaml"
+MACRO_SCHEDULE_YAML = ROOT / "macro_schedule.yaml"
+# Warn (not fail) when the hand-maintained schedule is running out of runway.
+MACRO_SCHEDULE_MIN_RUNWAY_DAYS = 45
 
 CAL_NAME = "Trading Events"
 
@@ -94,7 +105,7 @@ CAL_NAME = "Trading Events"
 class Event:
     when: datetime          # timezone-aware; London. For all-day, time is 00:00 London.
     all_day: bool
-    category: str           # earnings|macro|opex|opex_quarterly|vix_expiry|period_end|quarter_end|holiday|early_close
+    category: str           # earnings|macro|opex|opex_quarterly|vix_expiry|period_end|quarter_end|holiday|early_close|auction
     impact: str             # high|medium|structural
     title: str
     detail: str = ""
@@ -438,6 +449,122 @@ def fetch_macro() -> list[Event]:
     return events
 
 
+def load_macro_schedule(today: date, ff_events: list[Event]) -> list[Event]:
+    """Forward macro visibility from macro_schedule.yaml (official Fed/BLS/BEA
+    release schedules, hand-refreshed yearly).
+
+    The ForexFactory feed only covers the current week; this file carries the
+    known-in-advance releases (FOMC, CPI, NFP, PPI, GDP, PCE) months out so the
+    ICS subscriber can actually plan ahead. When FF already has a matching event
+    (same date, title contains a `dedup` keyword), the schedule row is dropped —
+    the FF row wins because it carries forecast/previous numbers.
+    """
+    import yaml
+
+    if not MACRO_SCHEDULE_YAML.exists():
+        print("[schedule] macro_schedule.yaml missing; skipping", file=sys.stderr)
+        return []
+    with MACRO_SCHEDULE_YAML.open() as f:
+        rows = yaml.safe_load(f) or []
+    if not isinstance(rows, list):
+        raise ValueError("macro_schedule.yaml must be a list of records")
+
+    # FF titles by date, for dedup.
+    ff_by_date: dict[date, list[str]] = {}
+    for e in ff_events:
+        ff_by_date.setdefault(e.when.date(), []).append(e.title.lower())
+
+    events: list[Event] = []
+    latest = today
+    for row in rows:
+        try:
+            d = row["date"]
+            if isinstance(d, str):
+                d = date.fromisoformat(d)
+            hh, mm = (int(x) for x in str(row["time_et"]).split(":"))
+            title = str(row["title"])
+            detail = str(row.get("detail", ""))
+            keywords = [str(k).lower() for k in row.get("dedup", [])]
+        except (KeyError, ValueError, TypeError) as e:
+            print(f"[schedule] skipping malformed row {row!r}: {e}", file=sys.stderr)
+            continue
+        latest = max(latest, d)
+        if d < today:
+            continue
+        when = datetime(d.year, d.month, d.day, hh, mm, tzinfo=TZ_NY).astimezone(TZ_LONDON)
+        if any(k in t for t in ff_by_date.get(when.date(), []) for k in keywords):
+            continue  # FF already carries this release with forecast numbers
+        digest = hashlib.md5(f"{title}|{d.isoformat()}".encode("utf-8")).hexdigest()[:10]
+        events.append(Event(
+            when=when, all_day=False, category="macro", impact="high",
+            title=title, detail=detail, confirmed=True,
+            uid=f"sched-{d.isoformat()}-{digest}@trading-events",
+        ))
+
+    runway = (latest - today).days
+    if runway < MACRO_SCHEDULE_MIN_RUNWAY_DAYS:
+        print(f"[schedule] WARNING: macro_schedule.yaml has only {runway} days of "
+              "coverage left — refresh it from the official Fed/BLS/BEA schedules",
+              file=sys.stderr)
+    print(f"[schedule] {len(events)} scheduled macro events (after FF dedup).",
+          file=sys.stderr)
+    return events
+
+
+def fetch_treasury_auctions(today: date) -> list[Event]:
+    """Upcoming 3y/10y/30y coupon auctions from TreasuryDirect's free JSON API
+    (no key). Auctions close 13:00 ET; results hit the tape moments later.
+    Best-effort: any failure logs and returns [] without failing the run."""
+    if not ENABLE_TREASURY:
+        return []
+    try:
+        import requests
+
+        r = requests.get(TREASURY_URL, timeout=20,
+                         headers={"User-Agent": MACRO_USER_AGENT})
+        r.raise_for_status()
+        body = r.text.lstrip()
+        if not body.startswith("["):
+            raise ValueError("response is not a JSON array")
+        rows = r.json()
+    except Exception as e:
+        print(f"[treasury] fetch failed ({e}); skipping auctions this run",
+              file=sys.stderr)
+        return []
+
+    events: list[Event] = []
+    seen: set[str] = set()
+    hh, mm = TREASURY_TIME_ET
+    for row in rows:
+        try:
+            if row.get("securityType") not in TREASURY_TYPES:
+                continue
+            term = row.get("securityTerm", "")
+            if term not in TREASURY_TERMS:
+                continue
+            d = date.fromisoformat(str(row.get("auctionDate", ""))[:10])
+        except (ValueError, TypeError):
+            continue
+        if d < today:
+            continue
+        key = f"{term}-{d.isoformat()}"
+        if key in seen:  # reopenings can list twice
+            continue
+        seen.add(key)
+        when = datetime(d.year, d.month, d.day, hh, mm, tzinfo=TZ_NY).astimezone(TZ_LONDON)
+        kind = row.get("securityType", "Note")
+        events.append(Event(
+            when=when, all_day=False, category="auction", impact="medium",
+            title=f"{term} Treasury {kind.lower()} auction",
+            detail="bidding closes 13:00 ET; results moments later",
+            confirmed=True,
+            uid=f"auction-{key}@trading-events",
+        ))
+
+    print(f"[treasury] {len(events)} upcoming coupon auctions.", file=sys.stderr)
+    return events
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # 3. Earnings — confirmed dates preferred; estimates flagged
 # ─────────────────────────────────────────────────────────────────────────────
@@ -759,8 +886,13 @@ def main() -> int:
               file=sys.stderr)
         return 2
 
+    # --- Scheduled macro (official Fed/BLS/BEA dates) + Treasury auctions ----
+    scheduled = load_macro_schedule(today, macro)
+    auctions = fetch_treasury_auctions(today)
+
     # --- Merge, sort, write --------------------------------------------------
-    all_events = sorted(structural + earnings + macro, key=lambda ev: ev.sort_key())
+    all_events = sorted(structural + earnings + macro + scheduled + auctions,
+                        key=lambda ev: ev.sort_key())
     write_data_json(all_events, now_london, feed_status)
     write_ics(all_events, now_london)
     print(f"[done] {len(all_events)} total events.", file=sys.stderr)

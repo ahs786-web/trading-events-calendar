@@ -1,0 +1,209 @@
+# Official-source macro release schedule — refresh ONCE A YEAR (~December).
+#
+# Why this file exists: the ForexFactory feed only covers the current week, so
+# the ICS subscriber can't "plan the week ahead" around next month's FOMC/CPI.
+# These dates come from the official publishers and are known far in advance:
+#
+#   FOMC : https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+#   CPI  : https://www.bls.gov/schedule/news_release/cpi.htm
+#   NFP  : https://www.bls.gov/schedule/news_release/empsit.htm   (Employment Situation)
+#   PPI  : https://www.bls.gov/schedule/news_release/ppi.htm
+#   GDP / Core PCE : https://www.bea.gov/news/schedule            (Personal Income & Outlays)
+#
+# (BLS also publishes an auto-updating ICS at
+#  https://www.bls.gov/schedule/news_release/bls.ics — handy when refreshing.)
+#
+# Times are US Eastern; build.py converts to Europe/London.
+# `dedup`: if the ForexFactory feed already carries a matching event (title
+# contains any keyword, same date), the schedule row is dropped in favour of the
+# FF row, which has forecast/previous numbers.
+#
+# Seeded 2026-08-11 from the pages above. FOMC runs to Dec 2027; BLS/BEA
+# schedules end at Dec 2026 — refresh when the 2027 schedules are published.
+
+# ── FOMC rate decisions (statement 14:00 ET, presser 14:30 ET) ──────────────
+- date: 2026-09-16
+  time_et: "14:00"
+  title: "FOMC rate decision"
+  detail: "Statement 14:00 ET, press conference 14:30 ET · SEP/dot plot"
+  dedup: [FOMC, Federal Funds]
+- date: 2026-10-28
+  time_et: "14:00"
+  title: "FOMC rate decision"
+  detail: "Statement 14:00 ET, press conference 14:30 ET"
+  dedup: [FOMC, Federal Funds]
+- date: 2026-12-09
+  time_et: "14:00"
+  title: "FOMC rate decision"
+  detail: "Statement 14:00 ET, press conference 14:30 ET · SEP/dot plot"
+  dedup: [FOMC, Federal Funds]
+- date: 2027-01-27
+  time_et: "14:00"
+  title: "FOMC rate decision"
+  detail: "Statement 14:00 ET, press conference 14:30 ET"
+  dedup: [FOMC, Federal Funds]
+- date: 2027-03-17
+  time_et: "14:00"
+  title: "FOMC rate decision"
+  detail: "Statement 14:00 ET, press conference 14:30 ET · SEP/dot plot"
+  dedup: [FOMC, Federal Funds]
+- date: 2027-04-28
+  time_et: "14:00"
+  title: "FOMC rate decision"
+  detail: "Statement 14:00 ET, press conference 14:30 ET"
+  dedup: [FOMC, Federal Funds]
+- date: 2027-06-09
+  time_et: "14:00"
+  title: "FOMC rate decision"
+  detail: "Statement 14:00 ET, press conference 14:30 ET · SEP/dot plot"
+  dedup: [FOMC, Federal Funds]
+- date: 2027-07-28
+  time_et: "14:00"
+  title: "FOMC rate decision"
+  detail: "Statement 14:00 ET, press conference 14:30 ET"
+  dedup: [FOMC, Federal Funds]
+- date: 2027-09-15
+  time_et: "14:00"
+  title: "FOMC rate decision"
+  detail: "Statement 14:00 ET, press conference 14:30 ET · SEP/dot plot"
+  dedup: [FOMC, Federal Funds]
+- date: 2027-10-27
+  time_et: "14:00"
+  title: "FOMC rate decision"
+  detail: "Statement 14:00 ET, press conference 14:30 ET"
+  dedup: [FOMC, Federal Funds]
+- date: 2027-12-08
+  time_et: "14:00"
+  title: "FOMC rate decision"
+  detail: "Statement 14:00 ET, press conference 14:30 ET · SEP/dot plot"
+  dedup: [FOMC, Federal Funds]
+
+# ── CPI (08:30 ET) ──────────────────────────────────────────────────────────
+- date: 2026-08-12
+  time_et: "08:30"
+  title: "CPI release"
+  detail: "July 2026 data · official BLS schedule"
+  dedup: [CPI]
+- date: 2026-09-11
+  time_et: "08:30"
+  title: "CPI release"
+  detail: "August 2026 data · official BLS schedule"
+  dedup: [CPI]
+- date: 2026-10-14
+  time_et: "08:30"
+  title: "CPI release"
+  detail: "September 2026 data · official BLS schedule"
+  dedup: [CPI]
+- date: 2026-11-10
+  time_et: "08:30"
+  title: "CPI release"
+  detail: "October 2026 data · official BLS schedule"
+  dedup: [CPI]
+- date: 2026-12-10
+  time_et: "08:30"
+  title: "CPI release"
+  detail: "November 2026 data · official BLS schedule"
+  dedup: [CPI]
+
+# ── Employment Situation / Non-Farm Payrolls (08:30 ET) ─────────────────────
+- date: 2026-09-04
+  time_et: "08:30"
+  title: "Jobs report (NFP)"
+  detail: "August 2026 data · official BLS schedule"
+  dedup: [Non-Farm, Unemployment Rate, Payroll]
+- date: 2026-10-02
+  time_et: "08:30"
+  title: "Jobs report (NFP)"
+  detail: "September 2026 data · official BLS schedule"
+  dedup: [Non-Farm, Unemployment Rate, Payroll]
+- date: 2026-11-06
+  time_et: "08:30"
+  title: "Jobs report (NFP)"
+  detail: "October 2026 data · official BLS schedule"
+  dedup: [Non-Farm, Unemployment Rate, Payroll]
+- date: 2026-12-04
+  time_et: "08:30"
+  title: "Jobs report (NFP)"
+  detail: "November 2026 data · official BLS schedule"
+  dedup: [Non-Farm, Unemployment Rate, Payroll]
+
+# ── PPI (08:30 ET) ──────────────────────────────────────────────────────────
+- date: 2026-08-13
+  time_et: "08:30"
+  title: "PPI release"
+  detail: "July 2026 data · official BLS schedule"
+  dedup: [PPI]
+- date: 2026-09-10
+  time_et: "08:30"
+  title: "PPI release"
+  detail: "August 2026 data · official BLS schedule"
+  dedup: [PPI]
+- date: 2026-10-15
+  time_et: "08:30"
+  title: "PPI release"
+  detail: "September 2026 data · official BLS schedule"
+  dedup: [PPI]
+- date: 2026-11-13
+  time_et: "08:30"
+  title: "PPI release"
+  detail: "October 2026 data · official BLS schedule"
+  dedup: [PPI]
+- date: 2026-12-15
+  time_et: "08:30"
+  title: "PPI release"
+  detail: "November 2026 data · official BLS schedule"
+  dedup: [PPI]
+
+# ── GDP estimates (08:30 ET, BEA) ───────────────────────────────────────────
+- date: 2026-08-26
+  time_et: "08:30"
+  title: "GDP second estimate (Q2)"
+  detail: "official BEA schedule"
+  dedup: [GDP]
+- date: 2026-09-30
+  time_et: "08:30"
+  title: "GDP third estimate (Q2)"
+  detail: "official BEA schedule"
+  dedup: [GDP]
+- date: 2026-10-29
+  time_et: "08:30"
+  title: "GDP advance estimate (Q3)"
+  detail: "official BEA schedule · biggest GDP print"
+  dedup: [GDP]
+- date: 2026-11-25
+  time_et: "08:30"
+  title: "GDP second estimate (Q3)"
+  detail: "official BEA schedule"
+  dedup: [GDP]
+- date: 2026-12-23
+  time_et: "08:30"
+  title: "GDP third estimate (Q3)"
+  detail: "official BEA schedule"
+  dedup: [GDP]
+
+# ── Core PCE / Personal Income & Outlays (08:30 ET, BEA) ────────────────────
+- date: 2026-08-26
+  time_et: "08:30"
+  title: "Core PCE (July)"
+  detail: "Personal Income & Outlays · Fed's preferred inflation gauge"
+  dedup: [PCE]
+- date: 2026-09-30
+  time_et: "08:30"
+  title: "Core PCE (August)"
+  detail: "Personal Income & Outlays · Fed's preferred inflation gauge"
+  dedup: [PCE]
+- date: 2026-10-29
+  time_et: "08:30"
+  title: "Core PCE (September)"
+  detail: "Personal Income & Outlays · Fed's preferred inflation gauge"
+  dedup: [PCE]
+- date: 2026-11-25
+  time_et: "08:30"
+  title: "Core PCE (October)"
+  detail: "Personal Income & Outlays · Fed's preferred inflation gauge"
+  dedup: [PCE]
+- date: 2026-12-23
+  time_et: "08:30"
+  title: "Core PCE (November)"
+  detail: "Personal Income & Outlays · Fed's preferred inflation gauge"
+  dedup: [PCE]
