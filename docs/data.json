@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T07:11:51.763415+01:00",
+  "generated_at": "2026-08-13T07:14:37.314147+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -37,15 +37,6 @@
       "impact": "high",
       "title": "Core CPI y/y",
       "detail": "forecast 2.5% / previous 2.6%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-12T18:00:00+01:00",
-      "all_day": false,
-      "category": "auction",
-      "impact": "medium",
-      "title": "10-Year Treasury note auction",
-      "detail": "bidding closes 13:00 ET; results moments later",
       "confirmed": true
     },
     {
