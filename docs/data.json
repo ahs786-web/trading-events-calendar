@@ -1,80 +1,8 @@
 {
-  "generated_at": "2026-08-15T06:22:09.537974+01:00",
+  "generated_at": "2026-08-16T06:25:03.756418+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
-    {
-      "datetime_london": "2026-08-12T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "CPI m/m",
-      "detail": "forecast 0.1% / previous -0.4%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-12T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "CPI y/y",
-      "detail": "forecast 3.4% / previous 3.5%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-12T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Core CPI m/m",
-      "detail": "forecast 0.2% / previous 0.0%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-12T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Core CPI y/y",
-      "detail": "forecast 2.5% / previous 2.6%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-13T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Core PPI m/m",
-      "detail": "forecast 0.3% / previous 0.2%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-13T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "PPI m/m",
-      "detail": "forecast 0.2% / previous -0.3%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-14T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Core Retail Sales m/m",
-      "detail": "forecast 0.2% / previous -0.2%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-14T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Retail Sales m/m",
-      "detail": "forecast 0.1% / previous 0.2%",
-      "confirmed": true
-    },
     {
       "datetime_london": "2026-08-19T00:00:00+01:00",
       "all_day": true,
@@ -82,6 +10,15 @@
       "impact": "structural",
       "title": "VIX monthly expiry",
       "detail": "30 days before next month's third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-08-19T19:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC Meeting Minutes",
+      "detail": "",
       "confirmed": true
     },
     {
@@ -1750,7 +1687,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-08-14T00:00:00+01:00",
+      "datetime_london": "2029-08-15T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
