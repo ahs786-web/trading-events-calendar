@@ -63,6 +63,12 @@ docs/events.ics            # written by build.py
   warning. Refresh from the URLs in the file's header — BLS also publishes an
   auto-updating ICS (`bls.gov/schedule/news_release/bls.ics`) that makes the
   copy-paste quick.
+- **Silent allowlist drift:** the macro feed's medium-impact rows are kept by a
+  substring allowlist, so a vendor renaming an event silently deletes it from
+  your calendar (this happened once: the weekly claims report is titled
+  *"Unemployment Claims"*, not *"Initial Jobless Claims"*). Every run now logs
+  the medium-impact USD rows it dropped, so a mismatch is visible in the
+  Actions log instead of just missing.
 - **Treasury auctions are best-effort:** a TreasuryDirect outage skips auctions
   for that run without failing the build (they're secondary context, not the
   thing that gets you caught out).

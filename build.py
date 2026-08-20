@@ -72,8 +72,14 @@ MACRO_HIGH_IMPACT = {"High"}        # always keep these
 MACRO_MEDIUM_ALLOWLIST = [
     "CPI", "Core CPI", "PPI", "PCE", "Core PCE", "Non-Farm", "Unemployment Rate",
     "FOMC", "Fed Funds", "Powell", "ISM Manufacturing", "ISM Services",
-    "Retail Sales", "Advance GDP", "Initial Jobless Claims", "Consumer Confidence",
-    "Michigan Sentiment",
+    "Retail Sales", "Advance GDP", "Consumer Confidence", "Michigan Sentiment",
+    # Labour market. NOTE: the feed titles the weekly claims report
+    # "Unemployment Claims", NOT "Initial Jobless Claims" — both spellings are
+    # listed so a vendor rename can't silently drop it again.
+    "Unemployment Claims", "Jobless Claims", "ADP Non-Farm", "JOLTS",
+    "Challenger Job Cuts",
+    # Regional surveys that actually move the tape on a quiet morning.
+    "Philly Fed", "Empire State", "Durable Goods",
 ]
 
 # --- Treasury auctions (TreasuryDirect) --------------------------------------
@@ -398,6 +404,7 @@ def fetch_macro() -> list[Event]:
 
     events: list[Event] = []
     seen: set[str] = set()
+    dropped_medium: list[str] = []
     for it in raw_items:
         currency = it.get("country", "")
         impact = it.get("impact", "")
@@ -405,6 +412,11 @@ def fetch_macro() -> list[Event]:
         if currency not in MACRO_CURRENCIES:
             continue
         if not macro_title_allowed(title, impact):
+            # Log what we threw away at Medium so an allowlist term that no
+            # longer matches the vendor's wording shows up in the run log
+            # instead of quietly vanishing from the calendar.
+            if impact == "Medium":
+                dropped_medium.append(title)
             continue
 
         raw_date = it.get("date", "")
@@ -446,6 +458,9 @@ def fetch_macro() -> list[Event]:
         ))
 
     print(f"[macro] kept {len(events)} filtered events.", file=sys.stderr)
+    if dropped_medium:
+        print("[macro] dropped medium-impact USD rows (not in allowlist): "
+              + ", ".join(sorted(set(dropped_medium))), file=sys.stderr)
     return events
 
 
