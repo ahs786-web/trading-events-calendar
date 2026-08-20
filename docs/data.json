@@ -1,17 +1,8 @@
 {
-  "generated_at": "2026-08-19T06:27:14.303306+01:00",
+  "generated_at": "2026-08-20T06:27:35.947180+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
-    {
-      "datetime_london": "2026-08-19T00:00:00+01:00",
-      "all_day": true,
-      "category": "vix_expiry",
-      "impact": "structural",
-      "title": "VIX monthly expiry",
-      "detail": "30 days before next month's third Friday",
-      "confirmed": true
-    },
     {
       "datetime_london": "2026-08-19T19:00:00+01:00",
       "all_day": false,
