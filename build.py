@@ -67,20 +67,23 @@ MACRO_USER_AGENT = (
     "contact via GitHub repo owner)"
 )
 MACRO_CURRENCIES = {"USD"}          # feed's `country` field is the currency code
-MACRO_HIGH_IMPACT = {"High"}        # always keep these
-# Medium-impact titles worth keeping, matched as case-insensitive substrings.
-MACRO_MEDIUM_ALLOWLIST = [
-    "CPI", "Core CPI", "PPI", "PCE", "Core PCE", "Non-Farm", "Unemployment Rate",
-    "FOMC", "Fed Funds", "Powell", "ISM Manufacturing", "ISM Services",
-    "Retail Sales", "Advance GDP", "Consumer Confidence", "Michigan Sentiment",
-    # Labour market. NOTE: the feed titles the weekly claims report
-    # "Unemployment Claims", NOT "Initial Jobless Claims" — both spellings are
-    # listed so a vendor rename can't silently drop it again.
-    "Unemployment Claims", "Jobless Claims", "ADP Non-Farm", "JOLTS",
-    "Challenger Job Cuts",
-    # Regional surveys that actually move the tape on a quiet morning.
-    "Philly Fed", "Empire State", "Durable Goods",
-]
+MACRO_HIGH_IMPACT = {"High"}        # used only to map the feed's impact -> ours
+# The feed's impact levels are ForexFactory's folder colours: red = High,
+# amber = Medium, yellow/grey = Low. We keep every red AND amber USD row,
+# deferring to the site's own triage rather than second-guessing it.
+#
+# This deliberately replaced a hand-written title allowlist. That allowlist was
+# a silent-failure machine: it listed "Initial Jobless Claims", but the feed
+# titles the weekly claims report "Unemployment Claims", so the substring never
+# matched and the release was dropped from the calendar every Thursday for
+# months without a single error. Matching on the folder colour can't miss a
+# release nobody thought to list in advance.
+MACRO_KEEP_IMPACTS = {"High", "Medium"}
+# Escape hatch: case-insensitive substrings to mute if a recurring amber row
+# turns out to be noise. Prefer adding one line here over rebuilding a
+# whitelist — a denylist fails loud (you see the event and mute it), a
+# whitelist fails silent (you never see what it ate).
+MACRO_TITLE_DENYLIST: list[str] = []
 
 # --- Treasury auctions (TreasuryDirect) --------------------------------------
 ENABLE_TREASURY = True
@@ -358,12 +361,10 @@ def _fetch_url(url: str) -> str:
 
 
 def macro_title_allowed(title: str, impact: str) -> bool:
-    if impact in MACRO_HIGH_IMPACT:
-        return True
-    if impact == "Medium":
-        low = title.lower()
-        return any(term.lower() in low for term in MACRO_MEDIUM_ALLOWLIST)
-    return False
+    if impact not in MACRO_KEEP_IMPACTS:
+        return False
+    low = title.lower()
+    return not any(term.lower() in low for term in MACRO_TITLE_DENYLIST)
 
 
 def fetch_macro() -> list[Event]:
@@ -404,7 +405,7 @@ def fetch_macro() -> list[Event]:
 
     events: list[Event] = []
     seen: set[str] = set()
-    dropped_medium: list[str] = []
+    dropped_kept_impact: list[str] = []
     for it in raw_items:
         currency = it.get("country", "")
         impact = it.get("impact", "")
@@ -412,11 +413,10 @@ def fetch_macro() -> list[Event]:
         if currency not in MACRO_CURRENCIES:
             continue
         if not macro_title_allowed(title, impact):
-            # Log what we threw away at Medium so an allowlist term that no
-            # longer matches the vendor's wording shows up in the run log
-            # instead of quietly vanishing from the calendar.
-            if impact == "Medium":
-                dropped_medium.append(title)
+            # Record red/amber rows we dropped (i.e. denylisted ones) so a mute
+            # is always visible in the run log rather than being invisible.
+            if impact in MACRO_KEEP_IMPACTS:
+                dropped_kept_impact.append(title)
             continue
 
         raw_date = it.get("date", "")
@@ -458,9 +458,9 @@ def fetch_macro() -> list[Event]:
         ))
 
     print(f"[macro] kept {len(events)} filtered events.", file=sys.stderr)
-    if dropped_medium:
-        print("[macro] dropped medium-impact USD rows (not in allowlist): "
-              + ", ".join(sorted(set(dropped_medium))), file=sys.stderr)
+    if dropped_kept_impact:
+        print("[macro] muted by MACRO_TITLE_DENYLIST: "
+              + ", ".join(sorted(set(dropped_kept_impact))), file=sys.stderr)
     return events
 
 

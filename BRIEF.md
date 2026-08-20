@@ -69,6 +69,10 @@ a day and the tool becomes unreadable. Default filter:
 
 - Currency: `USD` only.
 - Impact: `High` (red) only, PLUS a medium-impact allowlist matched on title:
+  > **Superseded in implementation.** The allowlist silently dropped any
+  > release whose vendor title didn't match (see README, failure modes).
+  > `build.py` keeps every USD red + amber row instead, with a denylist
+  > for muting noise.
   CPI, Core CPI, PPI, PCE, Core PCE, Non-Farm, Unemployment Rate, FOMC,
   Fed Funds, Powell, ISM Manufacturing, ISM Services, Retail Sales,
   Advance GDP, Initial Jobless Claims, Consumer Confidence, Michigan Sentiment.

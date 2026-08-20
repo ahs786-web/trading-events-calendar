@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T13:52:46.255789+01:00",
+  "generated_at": "2026-08-20T13:57:53.757499+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -9,6 +9,15 @@
       "category": "macro",
       "impact": "high",
       "title": "FOMC Meeting Minutes",
+      "detail": "",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-08-19T19:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "President Trump Speaks",
       "detail": "",
       "confirmed": true
     },

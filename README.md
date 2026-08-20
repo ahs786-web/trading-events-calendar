@@ -18,7 +18,7 @@ All display times are **Europe/London**. No accounts, no server, no database.
 | Month-end sessions | computed | last XNYS trading day of each month |
 | US market holidays (full closures) | computed | days the NYSE is fully closed (Independence Day, Thanksgiving, …) |
 | Early-close half-days | computed | thin, often-rangebound sessions closing 13:00 ET (Black Friday, Christmas Eve, July 3rd) |
-| Macro, current week (with forecasts) | [ForexFactory feed](https://nfs.faireconomy.media/ff_calendar_thisweek.json) | fetched once/day, USD + high-impact + a medium allowlist |
+| Macro, current week (with forecasts) | [ForexFactory feed](https://nfs.faireconomy.media/ff_calendar_thisweek.json) | fetched once/day; every USD **red + amber folder** event |
 | Macro, months ahead (FOMC, CPI, NFP, PPI, GDP, PCE) | [`macro_schedule.yaml`](macro_schedule.yaml) | official Fed/BLS/BEA release schedules, hand-refreshed yearly; deduped against the FF feed |
 | Treasury auctions (3y / 10y / 30y) | [TreasuryDirect API](https://www.treasurydirect.gov/TA_WS/securities/upcoming?format=json) | free official JSON, no key; 13:00 ET close; best-effort |
 | Earnings (Mag 7 + AMD, NFLX, COIN) | [`earnings.yaml`](earnings.yaml) + Nasdaq calendar | YAML is authoritative; Nasdaq refreshes *unconfirmed* dates only |
@@ -63,12 +63,18 @@ docs/events.ics            # written by build.py
   warning. Refresh from the URLs in the file's header — BLS also publishes an
   auto-updating ICS (`bls.gov/schedule/news_release/bls.ics`) that makes the
   copy-paste quick.
-- **Silent allowlist drift:** the macro feed's medium-impact rows are kept by a
-  substring allowlist, so a vendor renaming an event silently deletes it from
-  your calendar (this happened once: the weekly claims report is titled
-  *"Unemployment Claims"*, not *"Initial Jobless Claims"*). Every run now logs
-  the medium-impact USD rows it dropped, so a mismatch is visible in the
-  Actions log instead of just missing.
+- **No title allowlist (deliberately).** Macro rows are filtered on the feed's
+  impact level — ForexFactory's folder colour — keeping every USD **red** and
+  **amber** row. This supersedes the title allowlist in `BRIEF.md` §71, which
+  turned out to be a silent-failure machine: it listed *"Initial Jobless
+  Claims"*, but the feed titles the weekly claims report *"Unemployment
+  Claims"*, so the substring never matched and the release was dropped every
+  Thursday for months without a single error or warning. A whitelist fails
+  silent — you never see what it ate. Matching the folder colour can't miss a
+  release nobody thought to list in advance.
+  If an amber row proves to be noise, mute it via `MACRO_TITLE_DENYLIST` in
+  `build.py`; muted titles are printed in every run log, so a mute can't
+  quietly become the next missing event.
 - **Treasury auctions are best-effort:** a TreasuryDirect outage skips auctions
   for that run without failing the build (they're secondary context, not the
   thing that gets you caught out).
@@ -96,5 +102,5 @@ python build.py            # writes docs/data.json and docs/events.ics
 ## Tuning
 
 Everything tunable lives in the `CONFIG` block at the top of `build.py`:
-tickers, the macro currency/impact filter, the medium-impact allowlist, earnings
+tickers, the macro currency/impact filter, the macro title denylist, earnings
 release times, and the 3-year horizon.
