@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-24T06:35:50.121768+01:00",
+  "generated_at": "2026-08-25T06:29:14.340522+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
     {
-      "datetime_london": "2026-08-24T19:00:00+01:00",
+      "datetime_london": "2026-08-24T18:00:00+01:00",
       "all_day": false,
       "category": "macro",
       "impact": "medium",
@@ -1750,7 +1750,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-08-23T00:00:00+01:00",
+      "datetime_london": "2029-08-24T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
