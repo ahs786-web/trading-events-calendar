@@ -1,53 +1,8 @@
 {
-  "generated_at": "2026-08-29T12:28:26.224197+01:00",
+  "generated_at": "2026-08-30T11:15:43.206991+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
-    {
-      "datetime_london": "2026-08-24T18:00:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Treasury Sec Bessent Speaks",
-      "detail": "",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-25T15:00:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "CB Consumer Confidence",
-      "detail": "forecast 90.3 / previous 90.8",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-26T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Core PCE Price Index m/m",
-      "detail": "forecast 0.2% / previous 0.1%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-26T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Prelim GDP Price Index q/q",
-      "detail": "forecast 6.2% / previous 6.2%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-26T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Prelim GDP q/q",
-      "detail": "forecast 1.5% / previous 1.5%",
-      "confirmed": true
-    },
     {
       "datetime_london": "2026-08-26T21:30:00+01:00",
       "all_day": false,
@@ -56,51 +11,6 @@
       "title": "NVDA earnings (AMC)",
       "detail": "estimated — verify against IR · source: earnings.yaml",
       "confirmed": false
-    },
-    {
-      "datetime_london": "2026-08-27T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Unemployment Claims",
-      "detail": "forecast 208K / previous 206K",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-28T15:00:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Fed Chairman Warsh Speaks",
-      "detail": "",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-28T15:00:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Prelim Benchmark Payrolls Revision",
-      "detail": "previous -911K",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-28T15:00:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Revised UoM Consumer Sentiment",
-      "detail": "forecast 51.0 / previous 51.0",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-08-28T15:00:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Revised UoM Inflation Expectations",
-      "detail": "previous 4.3%",
-      "confirmed": true
     },
     {
       "datetime_london": "2026-08-31T00:00:00+01:00",
@@ -112,12 +22,84 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2026-09-01T15:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "ISM Manufacturing PMI",
+      "detail": "forecast 55.2 / previous 55.6",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-01T15:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "ISM Manufacturing Prices",
+      "detail": "forecast 71.2 / previous 71.1",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-01T15:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "JOLTS Job Openings",
+      "detail": "forecast 7.33M / previous 7.36M",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-02T13:15:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "ADP Non-Farm Employment Change",
+      "detail": "forecast 47K / previous 44K",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-03T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "Unemployment Claims",
+      "detail": "forecast 205K / previous 203K",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-03T15:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "ISM Services PMI",
+      "detail": "forecast 54.1 / previous 54.1",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2026-09-04T13:30:00+01:00",
       "all_day": false,
       "category": "macro",
       "impact": "high",
-      "title": "Jobs report (NFP)",
-      "detail": "August 2026 data · official BLS schedule",
+      "title": "Average Hourly Earnings m/m",
+      "detail": "forecast 0.3% / previous 0.1%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-04T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Non-Farm Employment Change",
+      "detail": "forecast 58K / previous -23K",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-04T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Unemployment Rate",
+      "detail": "forecast 4.1% / previous 4.1%",
       "confirmed": true
     },
     {
@@ -1759,7 +1741,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-08-28T00:00:00+01:00",
+      "datetime_london": "2029-08-29T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
