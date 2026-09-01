@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T12:21:06.876785+01:00",
+  "generated_at": "2026-09-01T10:44:29.208113+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -11,15 +11,6 @@
       "title": "NVDA earnings (AMC)",
       "detail": "estimated — verify against IR · source: earnings.yaml",
       "confirmed": false
-    },
-    {
-      "datetime_london": "2026-08-31T00:00:00+01:00",
-      "all_day": true,
-      "category": "period_end",
-      "impact": "structural",
-      "title": "Month-end (August 2026)",
-      "detail": "last trading session of the month",
-      "confirmed": true
     },
     {
       "datetime_london": "2026-09-01T15:00:00+01:00",
@@ -36,7 +27,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "ISM Manufacturing Prices",
-      "detail": "forecast 71.2 / previous 71.1",
+      "detail": "forecast 70.5 / previous 71.1",
       "confirmed": true
     },
     {
@@ -54,7 +45,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "ADP Non-Farm Employment Change",
-      "detail": "forecast 47K / previous 44K",
+      "detail": "forecast 48K / previous 44K",
       "confirmed": true
     },
     {
@@ -72,7 +63,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "ISM Services PMI",
-      "detail": "forecast 54.1 / previous 54.1",
+      "detail": "forecast 54.2 / previous 54.1",
       "confirmed": true
     },
     {
@@ -90,7 +81,7 @@
       "category": "macro",
       "impact": "high",
       "title": "Non-Farm Employment Change",
-      "detail": "forecast 58K / previous -23K",
+      "detail": "forecast 55K / previous -23K",
       "confirmed": true
     },
     {
@@ -1741,7 +1732,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-08-30T00:00:00+01:00",
+      "datetime_london": "2029-08-31T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
@@ -1783,6 +1774,24 @@
       "impact": "structural",
       "title": "Monthly OPEX",
       "detail": "third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-11-16T00:00:00+00:00",
+      "all_day": true,
+      "category": "opex",
+      "impact": "structural",
+      "title": "Monthly OPEX",
+      "detail": "third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-11-21T00:00:00+00:00",
+      "all_day": true,
+      "category": "vix_expiry",
+      "impact": "structural",
+      "title": "VIX monthly expiry",
+      "detail": "30 days before next month's third Friday",
       "confirmed": true
     }
   ]
