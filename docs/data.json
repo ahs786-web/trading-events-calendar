@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T10:44:29.208113+01:00",
+  "generated_at": "2026-09-02T10:17:18.139482+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -45,7 +45,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "ADP Non-Farm Employment Change",
-      "detail": "forecast 48K / previous 44K",
+      "detail": "forecast 47K / previous 44K",
       "confirmed": true
     },
     {
