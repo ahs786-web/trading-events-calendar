@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T10:21:32.766065+01:00",
+  "generated_at": "2026-09-09T10:23:29.728687+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -11,15 +11,6 @@
       "title": "NVDA earnings (AMC)",
       "detail": "estimated — verify against IR · source: earnings.yaml",
       "confirmed": false
-    },
-    {
-      "datetime_london": "2026-09-08T18:00:00+01:00",
-      "all_day": false,
-      "category": "auction",
-      "impact": "medium",
-      "title": "3-Year Treasury note auction",
-      "detail": "bidding closes 13:00 ET; results moments later",
-      "confirmed": true
     },
     {
       "datetime_london": "2026-09-10T13:30:00+01:00",
@@ -193,12 +184,12 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2026-10-20T21:30:00+01:00",
-      "all_day": false,
+      "datetime_london": "2026-10-20T00:00:00+01:00",
+      "all_day": true,
       "category": "earnings",
       "impact": "high",
-      "title": "NFLX earnings (AMC)",
-      "detail": "estimated — verify against IR · source: earnings.yaml",
+      "title": "NFLX earnings (time TBD)",
+      "detail": "estimated — verify against IR · source: nasdaq calendar (estimate)",
       "confirmed": false
     },
     {
