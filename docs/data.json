@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T10:01:33.890544+01:00",
+  "generated_at": "2026-09-13T10:58:01.408917+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -13,96 +13,6 @@
       "confirmed": false
     },
     {
-      "datetime_london": "2026-09-10T02:15:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "President Trump Speaks",
-      "detail": "",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-10T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Core PPI m/m",
-      "detail": "forecast 0.3% / previous 0.2%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-10T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "PPI m/m",
-      "detail": "forecast 0.4% / previous 0.0%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-10T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Unemployment Claims",
-      "detail": "forecast 205K / previous 206K",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-11T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "CPI m/m",
-      "detail": "forecast 0.4% / previous 0.1%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-11T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "CPI y/y",
-      "detail": "forecast 3.4% / previous 3.4%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-11T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Core CPI m/m",
-      "detail": "forecast 0.2% / previous 0.2%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-11T13:30:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Core CPI y/y",
-      "detail": "forecast 2.4% / previous 2.5%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-11T15:00:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Prelim UoM Consumer Sentiment",
-      "detail": "forecast 51.0 / previous 51.0",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-11T15:00:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Prelim UoM Inflation Expectations",
-      "detail": "previous 4.3%",
-      "confirmed": true
-    },
-    {
       "datetime_london": "2026-09-16T00:00:00+01:00",
       "all_day": true,
       "category": "vix_expiry",
@@ -112,12 +22,75 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2026-09-16T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "Core Retail Sales m/m",
+      "detail": "forecast 0.5% / previous -0.3%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-16T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "Retail Sales m/m",
+      "detail": "forecast 0.8% / previous -0.6%",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2026-09-16T19:00:00+01:00",
       "all_day": false,
       "category": "macro",
       "impact": "high",
-      "title": "FOMC rate decision",
-      "detail": "Statement 14:00 ET, press conference 14:30 ET · SEP/dot plot",
+      "title": "FOMC Economic Projections",
+      "detail": "",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-16T19:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC Statement",
+      "detail": "",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-16T19:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Federal Funds Rate",
+      "detail": "previous 3.75%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-16T19:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "FOMC Press Conference",
+      "detail": "",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-17T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "Philly Fed Manufacturing Index",
+      "detail": "forecast 28.9 / previous 47.4",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-17T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "Unemployment Claims",
+      "detail": "forecast 209K / previous 206K",
       "confirmed": true
     },
     {
@@ -1723,7 +1696,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-09-11T00:00:00+01:00",
+      "datetime_london": "2029-09-12T00:00:00+01:00",
       "all_day": true,
       "category": "quarter_end",
       "impact": "structural",
