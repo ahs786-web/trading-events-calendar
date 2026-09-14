@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T10:58:01.408917+01:00",
+  "generated_at": "2026-09-14T11:19:08.622546+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -63,7 +63,7 @@
       "category": "macro",
       "impact": "high",
       "title": "Federal Funds Rate",
-      "detail": "previous 3.75%",
+      "detail": "forecast 4.00% / previous 3.75%",
       "confirmed": true
     },
     {
@@ -1696,7 +1696,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-09-12T00:00:00+01:00",
+      "datetime_london": "2029-09-13T00:00:00+01:00",
       "all_day": true,
       "category": "quarter_end",
       "impact": "structural",
