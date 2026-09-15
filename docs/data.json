@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T11:19:08.622546+01:00",
+  "generated_at": "2026-09-15T10:46:04.738863+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -81,7 +81,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Philly Fed Manufacturing Index",
-      "detail": "forecast 28.9 / previous 47.4",
+      "detail": "forecast 31.3 / previous 47.4",
       "confirmed": true
     },
     {
@@ -90,7 +90,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Unemployment Claims",
-      "detail": "forecast 209K / previous 206K",
+      "detail": "forecast 208K / previous 206K",
       "confirmed": true
     },
     {
@@ -1696,7 +1696,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-09-13T00:00:00+01:00",
+      "datetime_london": "2029-09-14T00:00:00+01:00",
       "all_day": true,
       "category": "quarter_end",
       "impact": "structural",
