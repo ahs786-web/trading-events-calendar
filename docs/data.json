@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T10:46:04.738863+01:00",
+  "generated_at": "2026-09-16T10:40:00.346511+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -11,6 +11,15 @@
       "title": "NVDA earnings (AMC)",
       "detail": "estimated — verify against IR · source: earnings.yaml",
       "confirmed": false
+    },
+    {
+      "datetime_london": "2026-09-15T15:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "Treasury Sec Bessent Speaks",
+      "detail": "",
+      "confirmed": true
     },
     {
       "datetime_london": "2026-09-16T00:00:00+01:00",
@@ -27,7 +36,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Core Retail Sales m/m",
-      "detail": "forecast 0.5% / previous -0.3%",
+      "detail": "forecast 0.6% / previous -0.3%",
       "confirmed": true
     },
     {
@@ -90,7 +99,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Unemployment Claims",
-      "detail": "forecast 208K / previous 206K",
+      "detail": "forecast 207K / previous 206K",
       "confirmed": true
     },
     {
@@ -166,11 +175,11 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2026-10-20T00:00:00+01:00",
-      "all_day": true,
+      "datetime_london": "2026-10-20T21:30:00+01:00",
+      "all_day": false,
       "category": "earnings",
       "impact": "high",
-      "title": "NFLX earnings (time TBD)",
+      "title": "NFLX earnings (AMC)",
       "detail": "estimated — verify against IR · source: nasdaq calendar (estimate)",
       "confirmed": false
     },
