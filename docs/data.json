@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T10:40:00.346511+01:00",
+  "generated_at": "2026-09-17T10:48:48.651989+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -19,15 +19,6 @@
       "impact": "medium",
       "title": "Treasury Sec Bessent Speaks",
       "detail": "",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-16T00:00:00+01:00",
-      "all_day": true,
-      "category": "vix_expiry",
-      "impact": "structural",
-      "title": "VIX monthly expiry",
-      "detail": "30 days before next month's third Friday",
       "confirmed": true
     },
     {
