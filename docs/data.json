@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T10:35:28.249811+01:00",
+  "generated_at": "2026-09-21T11:23:43.548042+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -1635,19 +1635,19 @@
     {
       "datetime_london": "2029-09-19T00:00:00+01:00",
       "all_day": true,
-      "category": "quarter_end",
-      "impact": "structural",
-      "title": "Quarter-end (Q3 2029)",
-      "detail": "last trading session of the quarter",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2029-09-19T00:00:00+01:00",
-      "all_day": true,
       "category": "vix_expiry",
       "impact": "structural",
       "title": "VIX monthly expiry",
       "detail": "30 days before next month's third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-09-20T00:00:00+01:00",
+      "all_day": true,
+      "category": "quarter_end",
+      "impact": "structural",
+      "title": "Quarter-end (Q3 2029)",
+      "detail": "last trading session of the quarter",
       "confirmed": true
     },
     {
