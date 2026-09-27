@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T10:41:42.961629+01:00",
+  "generated_at": "2026-09-27T11:21:16.250302+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -13,57 +13,21 @@
       "confirmed": false
     },
     {
-      "datetime_london": "2026-09-22T14:55:00+01:00",
+      "datetime_london": "2026-09-29T15:00:00+01:00",
       "all_day": false,
       "category": "macro",
       "impact": "medium",
-      "title": "President Trump Speaks",
-      "detail": "",
+      "title": "CB Consumer Confidence",
+      "detail": "forecast 90.1 / previous 89.4",
       "confirmed": true
     },
     {
-      "datetime_london": "2026-09-24T13:30:00+01:00",
+      "datetime_london": "2026-09-29T15:00:00+01:00",
       "all_day": false,
       "category": "macro",
       "impact": "medium",
-      "title": "Unemployment Claims",
-      "detail": "forecast 201K / previous 196K",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-24T15:15:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "President Trump Speaks",
-      "detail": "",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-25T00:55:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "President Trump Speaks",
-      "detail": "",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-25T15:00:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Revised UoM Consumer Sentiment",
-      "detail": "forecast 47.4 / previous 47.8",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-25T15:00:00+01:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Revised UoM Inflation Expectations",
-      "detail": "previous 4.6%",
+      "title": "JOLTS Job Openings",
+      "detail": "forecast 7.23M / previous 7.27M",
       "confirmed": true
     },
     {
@@ -76,12 +40,12 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2026-09-30T13:30:00+01:00",
+      "datetime_london": "2026-09-30T13:15:00+01:00",
       "all_day": false,
       "category": "macro",
-      "impact": "high",
-      "title": "Core PCE (August)",
-      "detail": "Personal Income & Outlays · Fed's preferred inflation gauge",
+      "impact": "medium",
+      "title": "ADP Non-Farm Employment Change",
+      "detail": "forecast 70K / previous 38K",
       "confirmed": true
     },
     {
@@ -89,8 +53,53 @@
       "all_day": false,
       "category": "macro",
       "impact": "high",
-      "title": "GDP third estimate (Q2)",
-      "detail": "official BEA schedule",
+      "title": "Core PCE Price Index m/m",
+      "detail": "forecast 0.3% / previous 0.2%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-30T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "Final GDP Price Index q/q",
+      "detail": "forecast 6.4% / previous 6.4%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-30T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Final GDP q/q",
+      "detail": "forecast 1.5% / previous 1.5%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-10-01T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "Unemployment Claims",
+      "detail": "forecast 199K / previous 197K",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-10-01T15:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "FOMC Member Waller Speaks",
+      "detail": "",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-10-01T15:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "ISM Manufacturing PMI",
+      "detail": "forecast 55.0 / previous 54.6",
       "confirmed": true
     },
     {
@@ -98,8 +107,26 @@
       "all_day": false,
       "category": "macro",
       "impact": "high",
-      "title": "Jobs report (NFP)",
-      "detail": "September 2026 data · official BLS schedule",
+      "title": "Average Hourly Earnings m/m",
+      "detail": "forecast 0.3% / previous 0.3%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-10-02T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Non-Farm Employment Change",
+      "detail": "forecast 98K / previous 162K",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-10-02T13:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Unemployment Rate",
+      "detail": "forecast 4.1% / previous 4.1%",
       "confirmed": true
     },
     {
@@ -1687,7 +1714,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-09-25T00:00:00+01:00",
+      "datetime_london": "2029-09-26T00:00:00+01:00",
       "all_day": true,
       "category": "quarter_end",
       "impact": "structural",
