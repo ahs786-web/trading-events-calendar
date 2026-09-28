@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T11:21:16.250302+01:00",
+  "generated_at": "2026-09-28T12:25:49.281852+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -1714,7 +1714,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-09-26T00:00:00+01:00",
+      "datetime_london": "2029-09-27T00:00:00+01:00",
       "all_day": true,
       "category": "quarter_end",
       "impact": "structural",
