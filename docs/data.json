@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T12:05:07.615409+01:00",
+  "generated_at": "2026-09-30T11:53:38.075038+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -73,6 +73,24 @@
       "impact": "high",
       "title": "Final GDP q/q",
       "detail": "forecast 1.5% / previous 1.5%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-30T20:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "President Trump Speaks",
+      "detail": "",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-09-30T23:00:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "FOMC Member Kashkari Speaks",
+      "detail": "",
       "confirmed": true
     },
     {
