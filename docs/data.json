@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T11:53:38.075038+01:00",
+  "generated_at": "2026-10-01T12:21:24.912309+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -28,15 +28,6 @@
       "impact": "medium",
       "title": "JOLTS Job Openings",
       "detail": "forecast 7.23M / previous 7.27M",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-09-30T00:00:00+01:00",
-      "all_day": true,
-      "category": "quarter_end",
-      "impact": "structural",
-      "title": "Quarter-end (Q3 2026)",
-      "detail": "last trading session of the quarter",
       "confirmed": true
     },
     {
@@ -135,7 +126,7 @@
       "category": "macro",
       "impact": "high",
       "title": "Non-Farm Employment Change",
-      "detail": "forecast 90K / previous 162K",
+      "detail": "forecast 89K / previous 162K",
       "confirmed": true
     },
     {
@@ -1774,6 +1765,24 @@
       "impact": "structural",
       "title": "VIX monthly expiry",
       "detail": "30 days before next month's third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-12-19T00:00:00+00:00",
+      "all_day": true,
+      "category": "vix_expiry",
+      "impact": "structural",
+      "title": "VIX monthly expiry",
+      "detail": "30 days before next month's third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-12-21T00:00:00+00:00",
+      "all_day": true,
+      "category": "opex_quarterly",
+      "impact": "structural",
+      "title": "Quarterly OPEX / triple witching",
+      "detail": "third Friday",
       "confirmed": true
     }
   ]
