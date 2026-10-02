@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T12:21:24.912309+01:00",
+  "generated_at": "2026-10-02T11:52:30.959063+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -1729,6 +1729,15 @@
       "impact": "structural",
       "title": "Quarter-end (Q3 2029)",
       "detail": "last trading session of the quarter",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-10-01T00:00:00+01:00",
+      "all_day": true,
+      "category": "period_end",
+      "impact": "structural",
+      "title": "Month-end (October 2029)",
+      "detail": "last trading session of the month",
       "confirmed": true
     },
     {
