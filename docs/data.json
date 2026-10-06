@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T13:01:53.289886+01:00",
+  "generated_at": "2026-10-06T12:46:58.488375+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -36,6 +36,15 @@
       "category": "macro",
       "impact": "high",
       "title": "FOMC Meeting Minutes",
+      "detail": "",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-10-08T09:30:00+01:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "FOMC Member Waller Speaks",
       "detail": "",
       "confirmed": true
     },
@@ -1651,7 +1660,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-10-04T00:00:00+01:00",
+      "datetime_london": "2029-10-05T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
