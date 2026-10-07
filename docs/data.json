@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T12:46:58.488375+01:00",
+  "generated_at": "2026-10-07T12:30:46.098231+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -22,12 +22,12 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2026-10-06T18:00:00+01:00",
+      "datetime_london": "2026-10-07T18:00:00+01:00",
       "all_day": false,
-      "category": "auction",
+      "category": "macro",
       "impact": "medium",
-      "title": "3-Year Treasury note auction",
-      "detail": "bidding closes 13:00 ET; results moments later",
+      "title": "President Trump Speaks",
+      "detail": "",
       "confirmed": true
     },
     {
@@ -63,7 +63,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Prelim UoM Consumer Sentiment",
-      "detail": "forecast 47.6 / previous 47.8",
+      "detail": "forecast 47.5 / previous 47.8",
       "confirmed": true
     },
     {
