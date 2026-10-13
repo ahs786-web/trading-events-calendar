@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T13:44:51.708321+01:00",
+  "generated_at": "2026-10-13T13:27:08.808140+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -63,7 +63,7 @@
       "category": "macro",
       "impact": "high",
       "title": "Core Retail Sales m/m",
-      "detail": "forecast 0.5% / previous 1.4%",
+      "detail": "forecast 0.6% / previous 1.4%",
       "confirmed": true
     },
     {
@@ -72,7 +72,7 @@
       "category": "macro",
       "impact": "high",
       "title": "PPI m/m",
-      "detail": "forecast 0.5% / previous 0.4%",
+      "detail": "forecast 0.6% / previous 0.4%",
       "confirmed": true
     },
     {
@@ -81,7 +81,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Philly Fed Manufacturing Index",
-      "detail": "forecast 26.5 / previous 37.8",
+      "detail": "forecast 28.2 / previous 37.8",
       "confirmed": true
     },
     {
@@ -99,7 +99,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Unemployment Claims",
-      "detail": "forecast 195K / previous 197K",
+      "detail": "forecast 199K / previous 197K",
       "confirmed": true
     },
     {
@@ -1678,7 +1678,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-10-11T00:00:00+01:00",
+      "datetime_london": "2029-10-12T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
