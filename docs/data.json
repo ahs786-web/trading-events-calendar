@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T11:29:53.142370+01:00",
+  "generated_at": "2026-10-20T10:47:51.009395+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -54,7 +54,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Flash Manufacturing PMI",
-      "detail": "forecast 55.5 / previous 57.0",
+      "detail": "forecast 55.4 / previous 57.0",
       "confirmed": true
     },
     {
@@ -63,7 +63,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Flash Services PMI",
-      "detail": "forecast 58.0 / previous 58.7",
+      "detail": "forecast 57.8 / previous 58.7",
       "confirmed": true
     },
     {
@@ -1624,7 +1624,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-10-18T00:00:00+01:00",
+      "datetime_london": "2029-10-19T00:00:00+01:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
