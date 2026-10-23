@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T10:50:01.178445+01:00",
+  "generated_at": "2026-10-23T10:44:14.630012+01:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -1617,19 +1617,19 @@
     {
       "datetime_london": "2029-10-19T00:00:00+01:00",
       "all_day": true,
-      "category": "period_end",
-      "impact": "structural",
-      "title": "Month-end (October 2029)",
-      "detail": "last trading session of the month",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2029-10-19T00:00:00+01:00",
-      "all_day": true,
       "category": "opex",
       "impact": "structural",
       "title": "Monthly OPEX",
       "detail": "third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-10-22T00:00:00+01:00",
+      "all_day": true,
+      "category": "period_end",
+      "impact": "structural",
+      "title": "Month-end (October 2029)",
+      "detail": "last trading session of the month",
       "confirmed": true
     },
     {
