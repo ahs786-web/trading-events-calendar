@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T10:11:52.458636+00:00",
+  "generated_at": "2026-10-28T10:57:36.311043+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -99,7 +99,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Advance GDP Price Index q/q",
-      "detail": "forecast 3.3% / previous 6.2%",
+      "detail": "forecast 3.2% / previous 6.2%",
       "confirmed": true
     },
     {
