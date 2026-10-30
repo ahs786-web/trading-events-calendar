@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T11:17:25.260552+00:00",
+  "generated_at": "2026-10-30T11:10:21.986575+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -134,26 +134,8 @@
       "all_day": false,
       "category": "earnings",
       "impact": "high",
-      "title": "AAPL earnings (AMC)",
-      "detail": "estimated — verify against IR · source: earnings.yaml",
-      "confirmed": false
-    },
-    {
-      "datetime_london": "2026-10-29T20:30:00+00:00",
-      "all_day": false,
-      "category": "earnings",
-      "impact": "high",
       "title": "AMZN earnings (AMC)",
-      "detail": "estimated — verify against IR · source: nasdaq calendar (estimate)",
-      "confirmed": false
-    },
-    {
-      "datetime_london": "2026-10-29T20:30:00+00:00",
-      "all_day": false,
-      "category": "earnings",
-      "impact": "high",
-      "title": "COIN earnings (AMC)",
-      "detail": "estimated — verify against IR · source: nasdaq calendar (estimate)",
+      "detail": "estimated — verify against IR · source: earnings.yaml",
       "confirmed": false
     },
     {
@@ -175,11 +157,29 @@
       "confirmed": true
     },
     {
+      "datetime_london": "2026-11-02T21:30:00+00:00",
+      "all_day": false,
+      "category": "earnings",
+      "impact": "high",
+      "title": "AAPL earnings (AMC)",
+      "detail": "estimated — verify against IR · source: nasdaq calendar (estimate)",
+      "confirmed": false
+    },
+    {
       "datetime_london": "2026-11-03T21:30:00+00:00",
       "all_day": false,
       "category": "earnings",
       "impact": "high",
       "title": "AMD earnings (AMC)",
+      "detail": "estimated — verify against IR · source: earnings.yaml",
+      "confirmed": false
+    },
+    {
+      "datetime_london": "2026-11-05T21:30:00+00:00",
+      "all_day": false,
+      "category": "earnings",
+      "impact": "high",
+      "title": "COIN earnings (AMC)",
       "detail": "estimated — verify against IR · source: earnings.yaml",
       "confirmed": false
     },
@@ -1633,7 +1633,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-10-26T00:00:00+01:00",
+      "datetime_london": "2029-10-29T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
