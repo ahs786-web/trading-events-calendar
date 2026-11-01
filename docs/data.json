@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T10:43:15.878468+00:00",
+  "generated_at": "2026-11-01T11:40:14.371207+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -31,15 +31,6 @@
       "confirmed": false
     },
     {
-      "datetime_london": "2026-10-27T14:00:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "CB Consumer Confidence",
-      "detail": "forecast 81.2 / previous 81.9",
-      "confirmed": true
-    },
-    {
       "datetime_london": "2026-10-27T20:30:00+00:00",
       "all_day": false,
       "category": "earnings",
@@ -58,33 +49,6 @@
       "confirmed": false
     },
     {
-      "datetime_london": "2026-10-28T18:00:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "FOMC Statement",
-      "detail": "",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-10-28T18:00:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Federal Funds Rate",
-      "detail": "forecast 4.00% / previous 4.00%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-10-28T18:30:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "FOMC Press Conference",
-      "detail": "",
-      "confirmed": true
-    },
-    {
       "datetime_london": "2026-10-28T20:30:00+00:00",
       "all_day": false,
       "category": "earnings",
@@ -92,42 +56,6 @@
       "title": "META earnings (AMC)",
       "detail": "estimated — verify against IR · source: earnings.yaml",
       "confirmed": false
-    },
-    {
-      "datetime_london": "2026-10-29T12:30:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Advance GDP Price Index q/q",
-      "detail": "forecast 3.2% / previous 6.2%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-10-29T12:30:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Advance GDP q/q",
-      "detail": "forecast 3.2% / previous 1.5%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-10-29T12:30:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Core PCE Price Index m/m",
-      "detail": "forecast 0.3% / previous 0.2%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-10-29T12:30:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Unemployment Claims",
-      "detail": "forecast 198K / previous 194K",
-      "confirmed": true
     },
     {
       "datetime_london": "2026-10-29T20:30:00+00:00",
@@ -139,12 +67,12 @@
       "confirmed": false
     },
     {
-      "datetime_london": "2026-10-30T12:30:00+00:00",
+      "datetime_london": "2026-11-02T15:00:00+00:00",
       "all_day": false,
       "category": "macro",
       "impact": "medium",
-      "title": "Employment Cost Index q/q",
-      "detail": "forecast 0.8% / previous 0.9%",
+      "title": "ISM Manufacturing PMI",
+      "detail": "forecast 54.7 / previous 54.5",
       "confirmed": true
     },
     {
@@ -157,6 +85,24 @@
       "confirmed": false
     },
     {
+      "datetime_london": "2026-11-03T15:00:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "JOLTS Job Openings",
+      "detail": "forecast 7.11M / previous 7.08M",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-03T15:16:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Congressional Elections",
+      "detail": "",
+      "confirmed": true
+    },
+    {
       "datetime_london": "2026-11-03T21:30:00+00:00",
       "all_day": false,
       "category": "earnings",
@@ -164,6 +110,24 @@
       "title": "AMD earnings (AMC)",
       "detail": "estimated — verify against IR · source: earnings.yaml",
       "confirmed": false
+    },
+    {
+      "datetime_london": "2026-11-04T15:00:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "ISM Services PMI",
+      "detail": "forecast 54.9 / previous 54.9",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-05T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "Unemployment Claims",
+      "detail": "forecast 197K / previous 194K",
+      "confirmed": true
     },
     {
       "datetime_london": "2026-11-05T21:30:00+00:00",
@@ -179,8 +143,44 @@
       "all_day": false,
       "category": "macro",
       "impact": "high",
-      "title": "Jobs report (NFP)",
-      "detail": "October 2026 data · official BLS schedule",
+      "title": "Average Hourly Earnings m/m",
+      "detail": "forecast 0.3% / previous 0.1%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-06T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Non-Farm Employment Change",
+      "detail": "forecast 63K / previous 29K",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-06T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Unemployment Rate",
+      "detail": "forecast 4.2% / previous 4.2%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-06T15:00:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "Prelim UoM Consumer Sentiment",
+      "detail": "forecast 47.8 / previous 46.3",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-06T15:00:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "Prelim UoM Inflation Expectations",
+      "detail": "previous 4.7%",
       "confirmed": true
     },
     {
@@ -1624,7 +1624,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-10-30T00:00:00+00:00",
+      "datetime_london": "2029-10-31T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
@@ -1665,6 +1665,24 @@
       "category": "opex_quarterly",
       "impact": "structural",
       "title": "Quarterly OPEX / triple witching",
+      "detail": "third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2030-01-16T00:00:00+00:00",
+      "all_day": true,
+      "category": "vix_expiry",
+      "impact": "structural",
+      "title": "VIX monthly expiry",
+      "detail": "30 days before next month's third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2030-01-18T00:00:00+00:00",
+      "all_day": true,
+      "category": "opex",
+      "impact": "structural",
+      "title": "Monthly OPEX",
       "detail": "third Friday",
       "confirmed": true
     }
