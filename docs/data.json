@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T11:40:14.371207+00:00",
+  "generated_at": "2026-11-02T13:04:13.694143+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -72,7 +72,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "ISM Manufacturing PMI",
-      "detail": "forecast 54.7 / previous 54.5",
+      "detail": "forecast 54.5 / previous 54.5",
       "confirmed": true
     },
     {
@@ -1629,6 +1629,15 @@
       "category": "period_end",
       "impact": "structural",
       "title": "Month-end (October 2029)",
+      "detail": "last trading session of the month",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-11-01T00:00:00+00:00",
+      "all_day": true,
+      "category": "period_end",
+      "impact": "structural",
+      "title": "Month-end (November 2029)",
       "detail": "last trading session of the month",
       "confirmed": true
     },
