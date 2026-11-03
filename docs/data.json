@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T13:04:13.694143+00:00",
+  "generated_at": "2026-11-03T12:36:20.633915+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -62,6 +62,15 @@
       "all_day": false,
       "category": "earnings",
       "impact": "high",
+      "title": "AAPL earnings (AMC)",
+      "detail": "estimated — verify against IR · source: earnings.yaml",
+      "confirmed": false
+    },
+    {
+      "datetime_london": "2026-10-29T20:30:00+00:00",
+      "all_day": false,
+      "category": "earnings",
+      "impact": "high",
       "title": "AMZN earnings (AMC)",
       "detail": "estimated — verify against IR · source: earnings.yaml",
       "confirmed": false
@@ -76,21 +85,12 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2026-11-02T21:30:00+00:00",
-      "all_day": false,
-      "category": "earnings",
-      "impact": "high",
-      "title": "AAPL earnings (AMC)",
-      "detail": "estimated — verify against IR · source: nasdaq calendar (estimate)",
-      "confirmed": false
-    },
-    {
       "datetime_london": "2026-11-03T15:00:00+00:00",
       "all_day": false,
       "category": "macro",
       "impact": "medium",
       "title": "JOLTS Job Openings",
-      "detail": "forecast 7.11M / previous 7.08M",
+      "detail": "forecast 7.15M / previous 7.08M",
       "confirmed": true
     },
     {
@@ -108,7 +108,7 @@
       "category": "earnings",
       "impact": "high",
       "title": "AMD earnings (AMC)",
-      "detail": "estimated — verify against IR · source: earnings.yaml",
+      "detail": "estimated — verify against IR · source: nasdaq calendar (estimate)",
       "confirmed": false
     },
     {
@@ -117,7 +117,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "ISM Services PMI",
-      "detail": "forecast 54.9 / previous 54.9",
+      "detail": "forecast 54.8 / previous 54.9",
       "confirmed": true
     },
     {
@@ -153,7 +153,7 @@
       "category": "macro",
       "impact": "high",
       "title": "Non-Farm Employment Change",
-      "detail": "forecast 63K / previous 29K",
+      "detail": "forecast 65K / previous 29K",
       "confirmed": true
     },
     {
@@ -171,7 +171,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Prelim UoM Consumer Sentiment",
-      "detail": "forecast 47.8 / previous 46.3",
+      "detail": "forecast 48.1 / previous 46.3",
       "confirmed": true
     },
     {
@@ -1633,7 +1633,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-11-01T00:00:00+00:00",
+      "datetime_london": "2029-11-02T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
