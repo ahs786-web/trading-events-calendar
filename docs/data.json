@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T12:29:02.754314+00:00",
+  "generated_at": "2026-11-16T13:21:03.038256+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -163,15 +163,6 @@
       "impact": "structural",
       "title": "Monthly OPEX",
       "detail": "third Friday",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-20T13:25:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "FOMC Member Waller Speaks",
-      "detail": "",
       "confirmed": true
     },
     {
@@ -1606,7 +1597,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-11-14T00:00:00+00:00",
+      "datetime_london": "2029-11-15T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
