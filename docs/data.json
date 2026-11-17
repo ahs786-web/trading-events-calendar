@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T13:21:03.038256+00:00",
+  "generated_at": "2026-11-17T14:05:46.379153+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -108,7 +108,7 @@
       "category": "macro",
       "impact": "high",
       "title": "Retail Sales m/m",
-      "detail": "forecast 0.2% / previous 0.8%",
+      "detail": "forecast 0.1% / previous 0.8%",
       "confirmed": true
     },
     {
@@ -1597,7 +1597,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-11-15T00:00:00+00:00",
+      "datetime_london": "2029-11-16T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
