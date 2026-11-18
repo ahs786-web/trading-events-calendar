@@ -1,8 +1,17 @@
 {
-  "generated_at": "2026-11-17T14:05:46.379153+00:00",
+  "generated_at": "2026-11-18T13:39:26.095353+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
+    {
+      "datetime_london": "2026-08-26T21:30:00+01:00",
+      "all_day": false,
+      "category": "earnings",
+      "impact": "high",
+      "title": "NVDA earnings (AMC)",
+      "detail": "estimated — verify against IR · source: earnings.yaml",
+      "confirmed": false
+    },
     {
       "datetime_london": "2026-10-20T21:30:00+01:00",
       "all_day": false,
@@ -112,15 +121,6 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2026-11-17T21:30:00+00:00",
-      "all_day": false,
-      "category": "earnings",
-      "impact": "high",
-      "title": "NVDA earnings (AMC)",
-      "detail": "estimated — verify against IR · source: nasdaq calendar (estimate)",
-      "confirmed": false
-    },
-    {
       "datetime_london": "2026-11-18T00:00:00+00:00",
       "all_day": true,
       "category": "vix_expiry",
@@ -144,7 +144,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Philly Fed Manufacturing Index",
-      "detail": "forecast 19.2 / previous 20.9",
+      "detail": "forecast 20.6 / previous 20.9",
       "confirmed": true
     },
     {
@@ -153,7 +153,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Unemployment Claims",
-      "detail": "forecast 199K / previous 200K",
+      "detail": "forecast 198K / previous 200K",
       "confirmed": true
     },
     {
@@ -171,7 +171,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "Revised UoM Consumer Sentiment",
-      "detail": "forecast 52.1 / previous 51.0",
+      "detail": "forecast 51.7 / previous 51.0",
       "confirmed": true
     },
     {
