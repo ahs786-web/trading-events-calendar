@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T13:39:26.095353+00:00",
+  "generated_at": "2026-11-19T14:06:30.553838+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -118,15 +118,6 @@
       "impact": "high",
       "title": "Retail Sales m/m",
       "detail": "forecast 0.1% / previous 0.8%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-18T00:00:00+00:00",
-      "all_day": true,
-      "category": "vix_expiry",
-      "impact": "structural",
-      "title": "VIX monthly expiry",
-      "detail": "30 days before next month's third Friday",
       "confirmed": true
     },
     {
