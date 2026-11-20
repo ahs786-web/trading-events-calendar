@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T14:06:30.553838+00:00",
+  "generated_at": "2026-11-20T13:48:52.058868+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -172,6 +172,15 @@
       "impact": "medium",
       "title": "Revised UoM Inflation Expectations",
       "detail": "previous 4.3%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-20T17:00:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "President Trump Speaks",
+      "detail": "",
       "confirmed": true
     },
     {
@@ -1590,19 +1599,19 @@
     {
       "datetime_london": "2029-11-16T00:00:00+00:00",
       "all_day": true,
-      "category": "period_end",
-      "impact": "structural",
-      "title": "Month-end (November 2029)",
-      "detail": "last trading session of the month",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2029-11-16T00:00:00+00:00",
-      "all_day": true,
       "category": "opex",
       "impact": "structural",
       "title": "Monthly OPEX",
       "detail": "third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-11-19T00:00:00+00:00",
+      "all_day": true,
+      "category": "period_end",
+      "impact": "structural",
+      "title": "Month-end (November 2029)",
+      "detail": "last trading session of the month",
       "confirmed": true
     },
     {
