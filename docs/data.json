@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T13:48:52.058868+00:00",
+  "generated_at": "2026-11-21T13:14:22.970315+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -145,15 +145,6 @@
       "impact": "medium",
       "title": "Unemployment Claims",
       "detail": "forecast 198K / previous 200K",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-20T00:00:00+00:00",
-      "all_day": true,
-      "category": "opex",
-      "impact": "structural",
-      "title": "Monthly OPEX",
-      "detail": "third Friday",
       "confirmed": true
     },
     {
@@ -1606,7 +1597,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-11-19T00:00:00+00:00",
+      "datetime_london": "2029-11-20T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
