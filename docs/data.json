@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T13:14:22.970315+00:00",
+  "generated_at": "2026-11-22T13:03:31.921096+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -94,102 +94,66 @@
       "confirmed": false
     },
     {
-      "datetime_london": "2026-11-16T17:00:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Fed Chairman Warsh Speaks",
-      "detail": "",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-17T13:30:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Core Retail Sales m/m",
-      "detail": "forecast 0.4% / previous 0.9%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-17T13:30:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Retail Sales m/m",
-      "detail": "forecast 0.1% / previous 0.8%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-18T19:00:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "FOMC Meeting Minutes",
-      "detail": "",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-19T13:30:00+00:00",
+      "datetime_london": "2026-11-23T14:45:00+00:00",
       "all_day": false,
       "category": "macro",
       "impact": "medium",
-      "title": "Philly Fed Manufacturing Index",
-      "detail": "forecast 20.6 / previous 20.9",
+      "title": "Flash Manufacturing PMI",
+      "detail": "forecast 54.5 / previous 56.0",
       "confirmed": true
     },
     {
-      "datetime_london": "2026-11-19T13:30:00+00:00",
+      "datetime_london": "2026-11-23T14:45:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "Flash Services PMI",
+      "detail": "forecast 55.6 / previous 57.9",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-24T15:00:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "CB Consumer Confidence",
+      "detail": "forecast 92.1 / previous 91.7",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-25T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Core PCE Price Index m/m",
+      "detail": "forecast 0.3% / previous 0.3%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-25T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "medium",
+      "title": "Prelim GDP Price Index q/q",
+      "detail": "forecast 2.3% / previous 2.3%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-25T13:30:00+00:00",
+      "all_day": false,
+      "category": "macro",
+      "impact": "high",
+      "title": "Prelim GDP q/q",
+      "detail": "forecast 3.5% / previous 3.4%",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2026-11-25T13:30:00+00:00",
       "all_day": false,
       "category": "macro",
       "impact": "medium",
       "title": "Unemployment Claims",
-      "detail": "forecast 198K / previous 200K",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-20T15:00:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Revised UoM Consumer Sentiment",
-      "detail": "forecast 51.7 / previous 51.0",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-20T15:00:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Revised UoM Inflation Expectations",
-      "detail": "previous 4.3%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-20T17:00:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "President Trump Speaks",
-      "detail": "",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-25T13:30:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "Core PCE (October)",
-      "detail": "Personal Income & Outlays · Fed's preferred inflation gauge",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-25T13:30:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "high",
-      "title": "GDP second estimate (Q3)",
-      "detail": "official BEA schedule",
+      "detail": "forecast 201K / previous 203K",
       "confirmed": true
     },
     {
@@ -1597,7 +1561,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-11-20T00:00:00+00:00",
+      "datetime_london": "2029-11-21T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
