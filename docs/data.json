@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T13:03:31.921096+00:00",
+  "generated_at": "2026-11-23T15:40:09.697170+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -1576,6 +1576,15 @@
       "impact": "structural",
       "title": "VIX monthly expiry",
       "detail": "30 days before next month's third Friday",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-11-22T00:00:00+00:00",
+      "all_day": true,
+      "category": "holiday",
+      "impact": "structural",
+      "title": "US market closed — Thanksgiving",
+      "detail": "NYSE full-day closure",
       "confirmed": true
     },
     {
