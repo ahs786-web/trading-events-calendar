@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T15:40:09.697170+00:00",
+  "generated_at": "2026-11-24T15:29:58.651773+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -117,7 +117,7 @@
       "category": "macro",
       "impact": "medium",
       "title": "CB Consumer Confidence",
-      "detail": "forecast 92.1 / previous 91.7",
+      "detail": "forecast 92.4 / previous 91.7",
       "confirmed": true
     },
     {
@@ -145,15 +145,6 @@
       "impact": "high",
       "title": "Prelim GDP q/q",
       "detail": "forecast 3.5% / previous 3.4%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-25T13:30:00+00:00",
-      "all_day": false,
-      "category": "macro",
-      "impact": "medium",
-      "title": "Unemployment Claims",
-      "detail": "forecast 201K / previous 203K",
       "confirmed": true
     },
     {
@@ -1563,15 +1554,6 @@
     {
       "datetime_london": "2029-11-21T00:00:00+00:00",
       "all_day": true,
-      "category": "period_end",
-      "impact": "structural",
-      "title": "Month-end (November 2029)",
-      "detail": "last trading session of the month",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2029-11-21T00:00:00+00:00",
-      "all_day": true,
       "category": "vix_expiry",
       "impact": "structural",
       "title": "VIX monthly expiry",
@@ -1585,6 +1567,24 @@
       "impact": "structural",
       "title": "US market closed — Thanksgiving",
       "detail": "NYSE full-day closure",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-11-23T00:00:00+00:00",
+      "all_day": true,
+      "category": "period_end",
+      "impact": "structural",
+      "title": "Month-end (November 2029)",
+      "detail": "last trading session of the month",
+      "confirmed": true
+    },
+    {
+      "datetime_london": "2029-11-23T00:00:00+00:00",
+      "all_day": true,
+      "category": "early_close",
+      "impact": "structural",
+      "title": "US market half day — Black Friday",
+      "detail": "Early close 13:00 ET / 18:00 London — thin, often rangebound",
       "confirmed": true
     },
     {
