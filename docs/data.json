@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T14:41:07.391031+00:00",
+  "generated_at": "2026-11-28T13:52:21.956430+00:00",
   "feed_status": "ok",
   "timezone": "Europe/London",
   "events": [
@@ -145,15 +145,6 @@
       "impact": "high",
       "title": "Prelim GDP q/q",
       "detail": "forecast 3.5% / previous 3.4%",
-      "confirmed": true
-    },
-    {
-      "datetime_london": "2026-11-27T00:00:00+00:00",
-      "all_day": true,
-      "category": "early_close",
-      "impact": "structural",
-      "title": "US market half day — Black Friday",
-      "detail": "Early close 13:00 ET / 18:00 London — thin, often rangebound",
       "confirmed": true
     },
     {
@@ -1570,7 +1561,7 @@
       "confirmed": true
     },
     {
-      "datetime_london": "2029-11-26T00:00:00+00:00",
+      "datetime_london": "2029-11-27T00:00:00+00:00",
       "all_day": true,
       "category": "period_end",
       "impact": "structural",
